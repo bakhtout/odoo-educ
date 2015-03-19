@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# /#############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.tech-receptives.com>).
@@ -29,7 +29,9 @@ class op_batch(osv.osv):
             'start_date': fields.date(string='Start Date', required=True),
             'end_date': fields.date(string='End Date', required=True),
             'course_id': fields.many2one('op.course', string='Course', required=True),
+            'fees': fields.float(string='Fees', required=True)
     }
+
 
 op_batch()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -29,9 +29,6 @@
 								<field name="middle_name" />
 								<field name="last_name" />
 								<field name="roll_number" />
-								<field name="course_id" />
-								<field name="standard_id" />
-								<field name="batch_id" />
 							</tree>
 						</field>
 						<field name="user_id" placeholder="User Id" style="width: 30%%" />

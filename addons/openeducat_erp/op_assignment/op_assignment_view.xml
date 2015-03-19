@@ -8,9 +8,7 @@
 			<field name="arch" type="xml">
 				<tree string="Assignment">
 					<field name="name" />
-					<field name="course_id" />
-					<field name="standard_id" />
-					<field name="division_id" />
+					<field name="batch_id" />
 					<field name="subject_id" />
 					<field name="faculty_id" />
 					<field name="reviewer" />
@@ -48,9 +46,7 @@
 							</h1>
 						</div>
 						<group colspan="4" col="4">
-							<field name="course_id" attrs="{'readonly':[('state','!=','d')]}" />
-							<field name="standard_id" attrs="{'readonly':[('state','!=','d')]}" />
-							<field name="division_id" attrs="{'readonly':[('state','!=','d')]}" />
+							<field name="batch_id" attrs="{'readonly':[('state','!=','d')]}" />
 							<field name="subject_id" attrs="{'readonly':[('state','!=','d')]}" />
 							<field name="faculty_id" attrs="{'readonly':[('state','!=','d')]}" />
 							<field name="type" attrs="{'readonly':[('state','!=','d')]}" />
@@ -76,10 +72,6 @@
 										<field name="middle_name" />
 										<field name="last_name" />
 										<field name="library_card" />
-<!-- 										<field name="id_number" /> -->
-										<field name="course_id" />
-										<field name="batch_id" />
-										<field name="standard_id" />
 									</tree>
 								</field>
 							</page>
@@ -107,9 +99,7 @@
 			<field name="arch" type="xml">
 				<search string="Assignment">
 					<field name="name" />
-					<field name="course_id" />
-					<field name="standard_id" />
-					<field name="division_id" />
+					<field name="batch_id" />
 					<field name="subject_id" />
 					<field name="faculty_id" />
 					<field name="marks" />
@@ -122,11 +112,7 @@
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-						<filter string="Standard" domain="[]"
-							context="{'group_by':'standard_id'}" />
-						<filter string="Division" domain="[]"
-							context="{'group_by':'division_id'}" />
+						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
 						<filter string="Subject" domain="[]" context="{'group_by':'subject_id'}" />
 						<filter string="Faculty" domain="[]" context="{'group_by':'faculty_id'}" />
 						<filter string="Marks" domain="[]" context="{'group_by':'marks'}" />

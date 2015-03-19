@@ -29,22 +29,6 @@
 										</a>
 									</h4>
 									<ul>
-										<li t-if="record.course_id.raw_value">
-											Course:
-											<field name="course_id" />
-										</li>
-										<li t-if="record.standard_id.raw_value">
-											Standard:
-											<field name="standard_id" />
-										</li>
-										<li t-if="record.batch_id.raw_value">
-											Batch:
-											<field name="batch_id" />
-										</li>
-										<li t-if="record.division_id.raw_value">
-											Division:
-											<field name="division_id" />
-										</li>
 										<li t-if="record.roll_number.raw_value">
 											Roll Number:
 											<field name="roll_number" />
@@ -82,9 +66,7 @@
 					<field name="library_card" />
 					<field name="emergency_contact" />
 					<!-- <field name="id_number" /> -->
-					<field name="course_id" />
-					<field name="batch_id" />
-					<field name="standard_id" />
+					<field name="batch_ids" />
 					<field name="nationality" />
 					<field name="blood_group" />
 					<field name="language" />
@@ -167,28 +149,15 @@
 								</group>
 							</page>
 							<page string="Educational">
-								<separator colspan="4" string="Educational Detail" />
-								<group col="4" colspan="4">
-									<field name="course_id" />
-									<field name="standard_id" />
-									<field name="batch_id" />
-									<field name="division_id" />
-									<field name="gr_no" />
-									<field name="roll_number_line" colspan="4" nolabel="1"
-										context="{'default_course_id':course_id,
-                                     'default_batch_id':batch_id,
-                                     'default_standard_id':standard_id,
-                                     'default_division_id':division_id}" />
-								</group>
+                                <separator string="Batch" colspan="4" />
+                                <field name="batch_ids" colspan="4" nolabel="1" />
 							</page>
 							<page string="Assignments">
 								<separator string="Assignment" colspan="4" />
 								<field name="allocation_ids" colspan="4" nolabel="1">
 									<tree string="Assignment">
 										<field name="name" />
-										<field name="course_id" />
-										<field name="standard_id" />
-										<field name="division_id" />
+										<field name="batch_id" />
 										<field name="subject_id" />
 										<field name="faculty_id" />
 										<field name="reviewer" />
@@ -245,10 +214,6 @@
 					<field name="name" />
 					<field name="blood_group" />
 					<field name="category" />
-					<!-- <field name="id_number" /> -->
-					<field name="course_id" />
-					<field name="batch_id" />
-					<field name="standard_id" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Blood Group" domain="[]"
@@ -258,10 +223,6 @@
 						<filter string="Language" domain="[]" context="{'group_by':'language'}" />
 						<filter string="Category" domain="[]" context="{'group_by':'category'}" />
 						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
-						<filter string="Standard" domain="[]"
-							context="{'group_by':'standard_id'}" />
 					</group>
 				</search>
 			</field>

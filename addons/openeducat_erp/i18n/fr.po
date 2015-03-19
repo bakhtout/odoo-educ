@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:42+0000\n"
-"PO-Revision-Date: 2015-03-19 09:13+0100\n"
+"PO-Revision-Date: 2015-03-19 13:10+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_placement_offer
 #: view:op.placement.offer:0 view:op.student:0
 msgid "Placement Offer"
-msgstr "Offre de Placement"
+msgstr "Offre de stage"
 
 #. module: openeducat_erp
 #: view:op.book:0 field:op.book,internal_code:0
@@ -44,7 +44,7 @@ msgstr "Titre"
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
 msgid "Stop Detail"
-msgstr "Détail d'Arrêt"
+msgstr "Détail de la station"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_result_line_view
@@ -55,7 +55,7 @@ msgstr "Ligne de Résultat"
 #. module: openeducat_erp
 #: field:op.faculty,emergency_contact:0 field:op.student,emergency_contact:0
 msgid "Emergency Contact"
-msgstr "Contact d&#39;urgence"
+msgstr "Contact d'urgence"
 
 #. module: openeducat_erp
 #: field:op.health,physical_challenges:0
@@ -732,7 +732,7 @@ msgstr "Mercredi"
 #. module: openeducat_erp
 #: view:op.book.movement:0
 msgid "Student/Faculty Detail"
-msgstr "Étudiant/Enseignant Détail"
+msgstr "Étudiant / Ensignant Détail"
 
 #. module: openeducat_erp
 #: view:board.board:0
@@ -1017,7 +1017,7 @@ msgstr "Transport Route Détail"
 #: field:op.book.movement,type:0 field:op.book.queue,partner_id:0
 #: field:op.library.card,partner_id:0
 msgid "Student/Faculty"
-msgstr "Étudiant / Enseignant"
+msgstr "Étudiant / Ensignant"
 
 #. module: openeducat_erp
 #: view:op.marksheet.register:0 field:op.marksheet.register,marksheet_line:0
@@ -1057,7 +1057,7 @@ msgstr "Générer un rapport Tableau Temps"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_op_faculty_assignment
 msgid "Faculty Assignment"
-msgstr "Enseignant Affectation"
+msgstr "Ensignant Affectation"
 
 #. module: openeducat_erp
 #: view:op.assignment:0
@@ -1302,7 +1302,7 @@ msgstr "inconnu"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_faculty_sub
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_faculty_sub_faculty
 msgid "Faculties"
-msgstr "Enseignants"
+msgstr "Ensignants"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_attendance_register
@@ -1628,7 +1628,7 @@ msgstr "Annuler"
 #. module: openeducat_erp
 #: view:op.health:0
 msgid "Faculty Name"
-msgstr "Nom Enseignant"
+msgstr "Nom Ensignant"
 
 #. module: openeducat_erp
 #: view:op.faculty:0
@@ -1729,7 +1729,7 @@ msgstr "Bibliothèque"
 #: model:res.groups,name:openeducat_erp.group_op_faculty
 #: field:time.table.report,faculty_id:0
 msgid "Faculty"
-msgstr "Enseignant"
+msgstr "Ensignant"
 
 #. module: openeducat_erp
 #: field:op.hostel,room_lines:0
@@ -2341,7 +2341,7 @@ msgstr "Date De Début"
 #: model:ir.actions.act_window,name:openeducat_erp.open_board_faculty
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_dashboard_faculty
 msgid "Faculty Dashboard"
-msgstr "Enseignant Dashboard"
+msgstr "Ensignant Dashboard"
 
 #. module: openeducat_erp
 #: view:board.board:0
@@ -2528,7 +2528,7 @@ msgstr "Tableau Temps"
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_book_queue
 msgid " Book Queue Request Detail for Students and Faculties "
-msgstr "Réserver Queue Demande Détail pour les étudiants et Enseignants"
+msgstr "Réserver Queue Demande Détail pour les étudiants et Ensignants"
 
 #. module: openeducat_erp
 #: view:op.allocat.division:0
@@ -3122,7 +3122,7 @@ msgstr "Actual Date de retour"
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_health
 msgid " Health Detail for Students and Faculties "
-msgstr "Détail de la santé pour les étudiants et les Enseignants"
+msgstr "Détail de la santé pour les étudiants et les Ensignants"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_vehicle
@@ -3321,7 +3321,7 @@ msgstr "Soumissions"
 #. module: openeducat_erp
 #: view:op.timetable:0
 msgid "Faculty:"
-msgstr "Enseignant:"
+msgstr "Ensignant:"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_exam_view
