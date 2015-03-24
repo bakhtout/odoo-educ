@@ -19,6 +19,7 @@
 #
 #/#############################################################################
 from openerp.osv import osv, fields
+from openerp.tools.translate import _
 import time
 
 class op_student(osv.osv):
@@ -87,7 +88,28 @@ class op_student(osv.osv):
             'activity_log':fields.one2many('op.activity','student_id', 'Activity Log' ),
             'parent_ids': fields.many2many('op.parent', 'op_parent_student_rel', 'op_parent_id', 'op_student_id', string='Parent'),
             'gr_no': fields.char(string="GR Number", size=20),
+            'batch_invoiced_ids' : fields.one2many('op.batch.invoiced', 'student_id', 'Invoiced batches'),
     }
+
+    def create_batch_invoice(self, cr, uid, ids, context={}):
+        dummy, view_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'openeducat_erp', 'view_student_batch_to_invoice')
+
+        student = self.browse(cr, uid, ids[0], context=context)
+        return {
+            'name':_("Batch to Invoice"),
+            'view_mode': 'form',
+            'view_id': view_id,
+            'view_type': 'form',
+            'res_model': 'op.batch.invoiced',
+            'type': 'ir.actions.act_window',
+            'nodestroy': True,
+            'target': 'new',
+            'domain': '[]',
+            'context': {
+
+            }
+
+        }
 
 
     def create_invoice(self, cr, uid, ids, context={}):

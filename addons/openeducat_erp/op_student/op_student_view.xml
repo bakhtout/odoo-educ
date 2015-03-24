@@ -227,6 +227,8 @@
 				</search>
 			</field>
 		</record>
+
+
 		<record model="ir.actions.act_window" id="act_open_op_student_view">
 			<field name="name">Student</field>
 			<field name="type">ir.actions.act_window</field>

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-28 11:42+0000\n"
-"PO-Revision-Date: 2015-03-19 13:10+0100\n"
+"PO-Revision-Date: 2015-03-19 14:29+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,8 +36,9 @@ msgid "Standard:"
 msgstr "Standard:"
 
 #. module: openeducat_erp
-#: view:op.admission:0 field:op.admission,title:0 view:op.book:0 field:op.book,name:0
-#: field:op.book.purchase,name:0 view:op.faculty:0 view:op.student:0
+#: view:op.admission:0 field:op.admission,title:0 view:op.book:0
+#: field:op.book,name:0 field:op.book.purchase,name:0 view:op.faculty:0
+#: view:op.student:0
 msgid "Title"
 msgstr "Titre"
 
@@ -65,7 +66,7 @@ msgstr "Défi physique?"
 #. module: openeducat_erp
 #: view:op.parent:0
 msgid "User Id"
-msgstr "Id De L&#39;Utilisateur"
+msgstr "Id De L'Utilisateur"
 
 #. module: openeducat_erp
 #: field:res.users,parent_ids:0
@@ -115,38 +116,40 @@ msgstr "Prévu"
 #. module: openeducat_erp
 #: view:student.migrate:0
 msgid "Student Migrate"
-msgstr "Étudiant Migrate"
+msgstr "Transférer etudiant"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_student_migrate
 msgid "Student Migratation"
-msgstr "Étudiant Migratation"
+msgstr "Transfert etudiant"
 
 #. module: openeducat_erp
 #: field:op.health.line,name:0
 msgid "Checkup Detail"
-msgstr "Détail Checkup"
+msgstr "Détail vérification"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_parent_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_parent_main_parent
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_parent_root
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_parent_sub_parent view:op.parent:0
-#: view:op.student:0 field:op.student,parent_ids:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_parent_sub_parent
+#: view:op.parent:0 view:op.student:0 field:op.student,parent_ids:0
 #: model:res.groups,name:openeducat_erp.group_op_parent
 msgid "Parent"
 msgstr "Parent"
 
 #. module: openeducat_erp
-#: field:admission.analysis,standard_id:0 field:generate.time.table,standard_id:0
+#: field:admission.analysis,standard_id:0
+#: field:generate.time.table,standard_id:0
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_standard_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_standard_sub view:op.admission:0
-#: field:op.admission,standard_id:0 field:op.all.student,standard_id:0
-#: field:op.allocat.division,standard_id:0 view:op.assignment:0
-#: field:op.assignment,standard_id:0 view:op.attendance.line:0
-#: field:op.attendance.line,standard_id:0 view:op.attendance.register:0
-#: field:op.attendance.register,standard_id:0 field:op.classroom,standard_id:0
-#: view:op.exam:0 view:op.exam.room:0 field:op.exam.session,standard_id:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_standard_sub
+#: view:op.admission:0 field:op.admission,standard_id:0
+#: field:op.all.student,standard_id:0 field:op.allocat.division,standard_id:0
+#: view:op.assignment:0 field:op.assignment,standard_id:0
+#: view:op.attendance.line:0 field:op.attendance.line,standard_id:0
+#: view:op.attendance.register:0 field:op.attendance.register,standard_id:0
+#: field:op.classroom,standard_id:0 view:op.exam:0 view:op.exam.room:0
+#: field:op.exam.session,standard_id:0
 #: field:op.result.template.line,standard_id:0 view:op.roll.number:0
 #: field:op.roll.number,standard_id:0 view:op.standard:0 view:op.student:0
 #: field:op.student,standard_id:0 view:op.timetable:0
@@ -158,7 +161,7 @@ msgstr "Standard"
 #. module: openeducat_erp
 #: help:op.library.card.type,duration:0
 msgid "Duration in terms of Number of Lead Days"
-msgstr "Durée en termes de nombre de jours avancés"
+msgstr "Durée d'emprunt"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_author_sub view:op.book:0
@@ -168,7 +171,7 @@ msgstr "Auteurs"
 #. module: openeducat_erp
 #: view:generate.time.table:0
 msgid "Generate time Table"
-msgstr "Générer une table de temps"
+msgstr "Générer un emploi du temps"
 
 #. module: openeducat_erp
 #: field:gen.time.table.line,day:0
@@ -178,12 +181,12 @@ msgstr "Jour"
 #. module: openeducat_erp
 #: view:op.placement.offer:0 field:op.placement.offer,name:0
 msgid "Company Name"
-msgstr "Nom de l&#39;entreprise"
+msgstr "Nom de l'entreprise"
 
 #. module: openeducat_erp
 #: view:op.exam.session:0
 msgid "exam Session"
-msgstr "Session d&#39;examen"
+msgstr "Session d'examen"
 
 #. module: openeducat_erp
 #: view:op.health:0
@@ -250,12 +253,12 @@ msgstr "Sélectionner une section"
 #. module: openeducat_erp
 #: view:op.marksheet.register:0 field:op.marksheet.register,total_failed:0
 msgid "Total Fail"
-msgstr "Total Fail"
+msgstr "Total échec"
 
 #. module: openeducat_erp
 #: field:op.admission,gr_no_new:0
 msgid "GR Number new"
-msgstr "Nombre GR nouvelle"
+msgstr "Numéro du nouveau GR"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config
@@ -266,7 +269,7 @@ msgstr "Configuration"
 #. module: openeducat_erp
 #: view:op.book.movement:0
 msgid "Book Movement Detail"
-msgstr "Mouvement Réserver en ligne Détail"
+msgstr "Détail du mouvement du livre"
 
 #. module: openeducat_erp
 #: view:op.marksheet.register:0 field:op.marksheet.register,generated_by:0
@@ -275,14 +278,15 @@ msgstr "Généré par"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_facility_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_facility_sub view:op.facility:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_facility_sub
+#: view:op.facility:0
 msgid "Facility"
 msgstr "Facilité"
 
 #. module: openeducat_erp
 #: view:op.book:0
 msgid "Book Name"
-msgstr "Nom livre"
+msgstr "Nom du livre"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_route
@@ -294,17 +298,17 @@ msgstr "op.route"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_course_view
 #: view:op.admission:0 field:op.admission,course_id:0
 #: field:op.all.student,course_id:0 field:op.allocat.division,course_id:0
-#: view:op.assignment:0 field:op.assignment,course_id:0 view:op.attendance.line:0
-#: field:op.attendance.line,course_id:0 view:op.attendance.register:0
-#: field:op.attendance.register,course_id:0 view:op.batch:0
-#: field:op.batch,course_id:0 field:op.book,course_ids:0
+#: view:op.assignment:0 field:op.assignment,course_id:0
+#: view:op.attendance.line:0 field:op.attendance.line,course_id:0
+#: view:op.attendance.register:0 field:op.attendance.register,course_id:0
+#: view:op.batch:0 field:op.batch,course_id:0 field:op.book,course_ids:0
 #: field:op.book.purchase,course_ids:0 field:op.classroom,course_id:0
 #: view:op.course:0 view:op.exam:0 view:op.exam.room:0
 #: field:op.exam.room,course_ids:0 field:op.exam.room,standard_ids:0
 #: field:op.exam.room,student_ids:0 field:op.exam.session,course_id:0
 #: field:op.result.template.line,course_id:0 view:op.roll.number:0
-#: field:op.roll.number,course_id:0 field:op.standard,course_id:0 view:op.student:0
-#: field:op.student,course_id:0 field:op.subject,course_id:0
+#: field:op.roll.number,course_id:0 field:op.standard,course_id:0
+#: view:op.student:0 field:op.student,course_id:0 field:op.subject,course_id:0
 #: report:op.transport.detail.report:0 field:student.migrate,course_id:0
 msgid "Course"
 msgstr "Cours"
@@ -312,7 +316,7 @@ msgstr "Cours"
 #. module: openeducat_erp
 #: view:op.admission:0
 msgid "Open Student Profile"
-msgstr "Ouvrir profil de l&#39;élève"
+msgstr "Ouvrir profil de l'élève"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_scholarship_type_view
@@ -335,7 +339,7 @@ msgstr "Partenaire"
 #. module: openeducat_erp
 #: report:student.bonafide.certificate:0
 msgid "is / was a bonafide student of this school / collage  studying in Std."
-msgstr "est / était un étudiant de bonne foi de cette école / collage étudier en Std."
+msgstr "est / était un étudiant de bonne foi de cette école"
 
 #. module: openeducat_erp
 #: field:time.table.report,state:0
@@ -350,7 +354,8 @@ msgstr "O-ve"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_vehicle_view
-#: view:op.transportation:0 field:op.transportation,vehicle_id:0 view:op.vehicle:0
+#: view:op.transportation:0 field:op.transportation,vehicle_id:0
+#: view:op.vehicle:0
 msgid "Vehicle"
 msgstr "Véhicule"
 
@@ -367,7 +372,7 @@ msgstr "Période"
 #. module: openeducat_erp
 #: field:op.faculty,visa_info:0 field:op.student,visa_info:0
 msgid "Visa Info"
-msgstr "Visa Information"
+msgstr "Info Visa"
 
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,state:0 view:op.assignment:0
@@ -390,7 +395,7 @@ msgstr "Back Office"
 #: model:ir.actions.report.xml,name:openeducat_erp.report_op_marksheet
 #: report:op.marksheet:0
 msgid "MarkSheet"
-msgstr "Marksheet"
+msgstr "Bulletin de notes"
 
 #. module: openeducat_erp
 #: report:op.marksheet:0 field:op.result.line,per:0
@@ -400,9 +405,10 @@ msgstr "Pourcentage"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_exam_room_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_exam_room_sub view:op.exam.room:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_exam_room_sub
+#: view:op.exam.room:0
 msgid "Exam Room"
-msgstr "Salle d&#39;examen"
+msgstr "Salle d'examen"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_publisher
@@ -428,22 +434,22 @@ msgstr "admission.analysis"
 #. module: openeducat_erp
 #: view:op.admission:0
 msgid "Admision Detail"
-msgstr "Admisión Détail"
+msgstr "Détail d'inscription"
 
 #. module: openeducat_erp
 #: report:op.marksheet:0
 msgid "Month/ Year Of Passing"
-msgstr "Mois / Année de passer"
+msgstr "Mois / Année de passage"
 
 #. module: openeducat_erp
 #: view:op.timetable:0
 msgid "Today"
-msgstr "Aujourd&#39;hui"
+msgstr "Aujourd'hui"
 
 #. module: openeducat_erp
 #: view:op.assignment.sub.line:0
 msgid "Assignment Rejected"
-msgstr "Affectation Rejeté"
+msgstr "Devoir Rejeté"
 
 #. module: openeducat_erp
 #: selection:generate.roll.number,type:0
@@ -453,12 +459,12 @@ msgstr "Par Nom"
 #. module: openeducat_erp
 #: view:op.hostel.room:0 field:op.hostel.room,allocated_date:0
 msgid "Allocated Date"
-msgstr "Date de Numéroté"
+msgstr "Date allouée"
 
 #. module: openeducat_erp
 #: field:op.result.template,result_date:0
 msgid "Result Date"
-msgstr "Résultat date"
+msgstr "Date résultat"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_publisher_view
@@ -487,10 +493,10 @@ msgstr "Gestion des activités"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_pass_status_view
 #: model:ir.model,name:openeducat_erp.model_op_pass_status
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_pass_status view:op.pass.status:0
-#: field:op.result.template,pass_status_ids:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_pass_status
+#: view:op.pass.status:0 field:op.result.template,pass_status_ids:0
 msgid "Pass Status"
-msgstr "Statut passe"
+msgstr "Statut du badge"
 
 #. module: openeducat_erp
 #: report:student.bonafide.certificate:0
@@ -527,7 +533,7 @@ msgstr "30"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_exam
 msgid "Exam Management"
-msgstr "Gestion de l&#39;examen"
+msgstr "Gestion de l'examen"
 
 #. module: openeducat_erp
 #: view:op.exam.res.allocation:0
@@ -563,23 +569,25 @@ msgstr "Etudiants par chambre"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_category_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_category_sub view:op.admission:0
-#: field:op.admission,category_id:0 view:op.category:0 view:op.faculty:0
-#: field:op.faculty,category:0 view:op.student:0 field:op.student,category:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_category_sub
+#: view:op.admission:0 field:op.admission,category_id:0 view:op.category:0
+#: view:op.faculty:0 field:op.faculty,category:0 view:op.student:0
+#: field:op.student,category:0
 msgid "Category"
 msgstr "Catégorie"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_admission_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_adminssion_main
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_admission_main view:op.admission:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_admission_main
+#: view:op.admission:0
 msgid "Admission"
 msgstr "Admission"
 
 #. module: openeducat_erp
 #: view:op.exam.attendees:0
 msgid "Studen"
-msgstr "Studen"
+msgstr "Etudiant"
 
 #. module: openeducat_erp
 #: field:op.book.movement,penalty:0
@@ -614,7 +622,7 @@ msgstr "Résultat examen Ligne"
 #. module: openeducat_erp
 #: view:op.faculty:0
 msgid "Subjects Detail"
-msgstr "Sujets Détail"
+msgstr "Détail  Sujets"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_generate_time_table_view
@@ -635,7 +643,7 @@ msgstr "Statut"
 #. module: openeducat_erp
 #: view:op.exam.attendees:0
 msgid "Exam Attendess"
-msgstr "Attendess d&#39;examen"
+msgstr "Présent à l'examen"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_attendance_register_view
@@ -694,7 +702,7 @@ msgstr "Critères de qualification minimales"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_exam_type_sub view:op.exam:0
 #: field:op.exam,exam_type:0 view:op.exam.type:0 report:op.marksheet:0
 msgid "Exam Type"
-msgstr "Type d&#39;examen"
+msgstr "Type d'examen"
 
 #. module: openeducat_erp
 #: selection:op.faculty,blood_group:0 selection:op.health,blood_group:0
@@ -705,7 +713,7 @@ msgstr "B-ve"
 #. module: openeducat_erp
 #: report:op.marksheet:0
 msgid "Student Name:"
-msgstr "Nom de l&#39;étudiant:"
+msgstr "Nom de l'étudiant:"
 
 #. module: openeducat_erp
 #: view:op.book:0 view:op.book.queue:0
@@ -732,18 +740,18 @@ msgstr "Mercredi"
 #. module: openeducat_erp
 #: view:op.book.movement:0
 msgid "Student/Faculty Detail"
-msgstr "Étudiant / Ensignant Détail"
+msgstr "Étudiant / Enseignant Détail"
 
 #. module: openeducat_erp
 #: view:board.board:0
 #: model:ir.actions.act_window,name:openeducat_erp.open_board_libray
 msgid "Libray Dashboard"
-msgstr "Dashboard Libray"
+msgstr "Tableau de bord de la bibliothèque"
 
 #. module: openeducat_erp
 #: view:op.student:0
 msgid "Assignments"
-msgstr "Missions"
+msgstr "Devoirs"
 
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
@@ -773,12 +781,12 @@ msgstr "Quantité"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_exam_res_allocation_main
 msgid "Exams Resource Allocation"
-msgstr "Allocation examens de ressources"
+msgstr "Allocation  ressources examens"
 
 #. module: openeducat_erp
 #: view:op.hostel:0
 msgid "Hostel Details"
-msgstr "Auberge de jeunesse Détails"
+msgstr "Détails auberge"
 
 #. module: openeducat_erp
 #: view:op.health:0
@@ -805,7 +813,7 @@ msgstr "Présent"
 #: field:generate.time.table,time_table_lines_5:0
 #: field:generate.time.table,time_table_lines_6:0
 msgid "Time Table Lines"
-msgstr "Temps Tableau Lines"
+msgstr "Lignes Tableau de Temps"
 
 #. module: openeducat_erp
 #: view:op.health:0
@@ -820,7 +828,7 @@ msgstr "Institut précédente"
 #. module: openeducat_erp
 #: view:board.board:0
 msgid "Assignment To Submit"
-msgstr "Affectation à soumettre"
+msgstr "Devoir à soumettre"
 
 #. module: openeducat_erp
 #: constraint:student.migrate:0
@@ -835,17 +843,17 @@ msgstr "Détails"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_student_migrate_view
 msgid "Student Migration"
-msgstr "la migration des étudiants"
+msgstr "le transfert des étudiants"
 
 #. module: openeducat_erp
 #: view:op.result.template:0
 msgid "Genrate Result"
-msgstr "Résultat Genrate"
+msgstr "Générer résultat"
 
 #. module: openeducat_erp
 #: view:op.attendance.sheet:0 field:op.attendance.sheet,total_present:0
 msgid "Total Present"
-msgstr "Présent total"
+msgstr "total présent"
 
 #. module: openeducat_erp
 #: model:ir.actions.report.xml,name:openeducat_erp.report_op_transportation
@@ -860,12 +868,12 @@ msgstr "student.hall.ticket"
 #. module: openeducat_erp
 #: view:student.attendance:0
 msgid "Student Attendance Report Between These Dates"
-msgstr "Rapport de l&#39;assiduité des élèves entre ces dates"
+msgstr "Rapport de l'assiduité des élèves entre ces dates"
 
 #. module: openeducat_erp
 #: view:op.exam:0 selection:op.exam,state:0
 msgid "New Exam"
-msgstr "New examen"
+msgstr "Nouveau examen"
 
 #. module: openeducat_erp
 #: view:op.faculty:0 view:op.student:0
@@ -885,10 +893,12 @@ msgstr ""
 #: field:op.admission,division_id:0 field:op.all.student,division_id:0
 #: field:op.allocat.division,division_id:0 view:op.assignment:0
 #: field:op.assignment,division_id:0 view:op.attendance.line:0
-#: field:op.attendance.line,division_id:0 field:op.attendance.register,division_id:0
-#: view:op.division:0 field:op.exam,division_id:0 field:op.exam.session,division_id:0
-#: field:op.result.template.line,division_id:0 field:op.roll.number,division_id:0
-#: view:op.standard:0 field:op.student,division_id:0 field:op.timetable,division_id:0
+#: field:op.attendance.line,division_id:0
+#: field:op.attendance.register,division_id:0 view:op.division:0
+#: field:op.exam,division_id:0 field:op.exam.session,division_id:0
+#: field:op.result.template.line,division_id:0
+#: field:op.roll.number,division_id:0 view:op.standard:0
+#: field:op.student,division_id:0 field:op.timetable,division_id:0
 #: field:time.table.report,division_id:0
 msgid "Division"
 msgstr "Division"
@@ -906,12 +916,12 @@ msgstr "Demande"
 #. module: openeducat_erp
 #: selection:op.course,evaluation_type:0 selection:op.exam,evaluation_type:0
 msgid "GPA"
-msgstr "GPA"
+msgstr "Moyenne"
 
 #. module: openeducat_erp
 #: field:op.hostel,capacity:0
 msgid "Hostel Capacity"
-msgstr "Hostel Capacité"
+msgstr "Capacité auberge"
 
 #. module: openeducat_erp
 #: selection:op.result.line,status:0
@@ -952,7 +962,7 @@ msgstr "Réservé"
 #. module: openeducat_erp
 #: view:exam.seat.arrange:0
 msgid "Generate Exam Seating"
-msgstr "Générer coin de l&#39;examen"
+msgstr "Générer places de l'examen"
 
 #. module: openeducat_erp
 #: view:res.company:0 field:res.company,approval_authority:0
@@ -962,7 +972,7 @@ msgstr "Autorité approbatrice"
 #. module: openeducat_erp
 #: view:generate.roll.number:0
 msgid "Generate Roll Numbers"
-msgstr "Générer des nombres rouleau"
+msgstr "Générer des numéros d'enreg."
 
 #. module: openeducat_erp
 #: field:op.course,subject_ids:0
@@ -989,17 +999,18 @@ msgstr "Participation des étudiants"
 #. module: openeducat_erp
 #: view:op.subject:0
 msgid "Subject Details"
-msgstr "Sujet Détails"
+msgstr "Détails sujet"
 
 #. module: openeducat_erp
 #: field:op.admission,zip:0
 msgid "Zip"
-msgstr "Fermeture éclair"
+msgstr "Code postale"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_author_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_sub_author_library view:op.author:0
-#: field:op.book,author_ids:0 field:op.book.purchase,author_ids:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_sub_author_library
+#: view:op.author:0 field:op.book,author_ids:0
+#: field:op.book.purchase,author_ids:0
 msgid "Author"
 msgstr "Auteur"
 
@@ -1011,7 +1022,7 @@ msgstr "Principales maladies?"
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
 msgid "Transport Route Detail"
-msgstr "Transport Route Détail"
+msgstr "Détail Route"
 
 #. module: openeducat_erp
 #: field:op.book.movement,type:0 field:op.book.queue,partner_id:0
@@ -1033,12 +1044,12 @@ msgstr "reserve.book"
 #: field:book.request.queue,date_from:0 field:op.book.queue,date_from:0
 #: field:student.attendance,from_date:0
 msgid "From Date"
-msgstr "Date d&#39;entrée en"
+msgstr "Date d'entrée en"
 
 #. module: openeducat_erp
 #: view:board.board:0
 msgid "Due Book Of Today"
-msgstr "En raison Book Of Aujourd&#39;hui"
+msgstr "Les livres à remettre aujourd'hui"
 
 #. module: openeducat_erp
 #: view:op.all.student:0 field:op.all.student,student_ids:0
@@ -1057,17 +1068,17 @@ msgstr "Générer un rapport Tableau Temps"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_op_faculty_assignment
 msgid "Faculty Assignment"
-msgstr "Ensignant Affectation"
+msgstr "Affectation enseignant"
 
 #. module: openeducat_erp
 #: view:op.assignment:0
 msgid "Finish"
-msgstr "Finition"
+msgstr "Fin"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_book_movement_sub
 msgid "Book movements"
-msgstr "mouvements Réservez"
+msgstr "mouvements du livre"
 
 #. module: openeducat_erp
 #: field:op.book.movement,reserver_name:0
@@ -1087,7 +1098,7 @@ msgstr "Dernière connexion"
 #. module: openeducat_erp
 #: field:op.admission,due_date:0
 msgid "Due Date"
-msgstr "Date D&#39;Échéance"
+msgstr "Date D'Échéance"
 
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,mobile:0
@@ -1104,7 +1115,7 @@ msgstr "Date de publication"
 #. module: openeducat_erp
 #: view:op.attendance.sheet:0 field:op.attendance.sheet,register_id:0
 msgid "Register"
-msgstr "Se enregistrer"
+msgstr "S'enregistrer"
 
 #. module: openeducat_erp
 #: view:op.exam:0 field:op.exam,venue:0
@@ -1119,12 +1130,12 @@ msgstr "DIRECTEUR"
 #. module: openeducat_erp
 #: view:board.board:0
 msgid "Period For Today"
-msgstr "Période Pour Aujourd&#39;hui"
+msgstr "Période Pour Aujourd'hui"
 
 #. module: openeducat_erp
 #: report:op.marksheet:0
 msgid "Exam Name:"
-msgstr "Nom d&#39;examen:"
+msgstr "Nom d'examen:"
 
 #. module: openeducat_erp
 #: report:op.marksheet:0
@@ -1139,7 +1150,7 @@ msgstr "Capacité de la salle"
 #. module: openeducat_erp
 #: view:op.book:0
 msgid "Book Queue Requests"
-msgstr "Demandes livre Queue"
+msgstr "Liste d'attente du livre"
 
 #. module: openeducat_erp
 #: view:op.health:0 field:op.health,eyeglasses_no:0
@@ -1160,14 +1171,14 @@ msgstr "Nombre de chambre"
 #: view:admission.analysis:0
 #: model:ir.ui.menu,name:openeducat_erp.menu_admission_analysis
 msgid "Admission Analysis"
-msgstr "Analyse d&#39;admission"
+msgstr "Analyse d'admission"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_activity_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_activity_sub view:op.activity:0
-#: view:op.student:0 field:op.student,activity_log:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_activity_sub
+#: view:op.activity:0 view:op.student:0 field:op.student,activity_log:0
 msgid "Activity Log"
-msgstr "Journal d&#39;activité"
+msgstr "Journal d'activité"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_purchase_view
@@ -1177,12 +1188,12 @@ msgstr "Demande Livre (s)"
 #. module: openeducat_erp
 #: report:op.student.report:0
 msgid "Roll No.:"
-msgstr "Rouler No .:"
+msgstr "No .:"
 
 #. module: openeducat_erp
 #: view:board.board:0
 msgid "Due Book Of Month"
-msgstr "En raison livre du mois"
+msgstr "Livre à remettre du mois"
 
 #. module: openeducat_erp
 #: report:op.exam.student.lable:0
@@ -1198,8 +1209,9 @@ msgstr "Pourcentage minimum"
 #: field:gen.time.table.line,subject_id:0
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_subject_view
 #: view:op.assignment:0 field:op.assignment,subject_id:0
-#: field:op.attendance.register,subject_id:0 field:op.book.purchase,subject_ids:0
-#: view:op.exam:0 field:op.exam,subject_id:0 report:op.marksheet:0 view:op.subject:0
+#: field:op.attendance.register,subject_id:0
+#: field:op.book.purchase,subject_ids:0 view:op.exam:0
+#: field:op.exam,subject_id:0 report:op.marksheet:0 view:op.subject:0
 #: view:op.timetable:0 field:op.timetable,subject_id:0
 msgid "Subject"
 msgstr "Sujet"
@@ -1228,7 +1240,7 @@ msgstr "Nom Route"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_hostel_room_view
 #: view:op.hostel.room:0
 msgid "Hostel Room"
-msgstr "Hostel Room"
+msgstr "Chambre auberge"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_library_card_view
@@ -1245,14 +1257,14 @@ msgstr "Carte de bibliothèque"
 #. module: openeducat_erp
 #: view:op.assignment:0
 msgid "Assignment Name"
-msgstr "Affectation Nom"
+msgstr "Nom du devoir"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_marksheet_register_view
 #: view:op.marksheet.line:0 field:op.marksheet.line,marksheet_reg_id:0
 #: view:op.marksheet.register:0 field:op.marksheet.register,name:0
 msgid "Marksheet Register"
-msgstr "Marksheet inscrire"
+msgstr "Registre relevées de notes"
 
 #. module: openeducat_erp
 #: view:admission.analysis:0 view:student.hall.ticket:0
@@ -1267,16 +1279,16 @@ msgid "Type"
 msgstr "Type"
 
 #. module: openeducat_erp
-#: view:op.admission:0 view:op.assignment:0 view:op.faculty:0 view:op.hostel.room:0
-#: view:op.library.card:0 view:op.library.card.type:0 view:op.placement.offer:0
-#: view:op.student:0
+#: view:op.admission:0 view:op.assignment:0 view:op.faculty:0
+#: view:op.hostel.room:0 view:op.library.card:0 view:op.library.card.type:0
+#: view:op.placement.offer:0 view:op.student:0
 msgid "Basic Information"
 msgstr "Données de base"
 
 #. module: openeducat_erp
 #: view:op.marksheet.register:0
 msgid "Marksheet Detail"
-msgstr "Marksheet Détail"
+msgstr "Détail relevée de notes"
 
 #. module: openeducat_erp
 #: view:op.classroom:0 field:op.classroom,facility:0
@@ -1287,9 +1299,10 @@ msgstr "Aménagements"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_activity_type_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_activity_type_sub
-#: field:op.activity,type_id:0 view:op.activity.type:0 field:op.activity.type,name:0
+#: field:op.activity,type_id:0 view:op.activity.type:0
+#: field:op.activity.type,name:0
 msgid "Activity Type"
-msgstr "Type d&#39;activité"
+msgstr "Type d'activité"
 
 #. module: openeducat_erp
 #: field:op.result.exam.line,result_id:0 field:reserve.book,partner_id:0
@@ -1302,7 +1315,7 @@ msgstr "inconnu"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_faculty_sub
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_faculty_sub_faculty
 msgid "Faculties"
-msgstr "Ensignants"
+msgstr "Enseignants"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_attendance_register
@@ -1327,7 +1340,7 @@ msgstr "Joindre"
 #. module: openeducat_erp
 #: field:op.vehicle,reg_number:0
 msgid "Registration Number"
-msgstr "Numéro d&#39;enregistrement"
+msgstr "Numéro d'enregistrement"
 
 #. module: openeducat_erp
 #: field:op.health.line,recommendation:0
@@ -1337,7 +1350,7 @@ msgstr "Recommandation Checkup"
 #. module: openeducat_erp
 #: field:op.library.card.type,penalty_amt_per_day:0
 msgid "Penalty Amount Per Day"
-msgstr "Pénalité montant par jour"
+msgstr "montant pénalité par jour"
 
 #. module: openeducat_erp
 #: field:op.attendance.sheet,teacher_id:0 selection:time.table.report,state:0
@@ -1347,17 +1360,17 @@ msgstr "Professeur"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_op_gen_roll_no
 msgid "Generate Roll Number  "
-msgstr "Générer Numéro de rôle"
+msgstr "Générer Numéro d'Enreg."
 
 #. module: openeducat_erp
 #: view:op.health:0
 msgid "Regular Checkup"
-msgstr "Checkup régulière"
+msgstr "Checkup régulier"
 
 #. module: openeducat_erp
 #: field:op.placement.offer,join_date:0
 msgid "Join Date"
-msgstr "Date d&#39;inscription"
+msgstr "Date d'inscription"
 
 #. module: openeducat_erp
 #: view:op.health:0
@@ -1367,7 +1380,7 @@ msgstr "Autres détails"
 #. module: openeducat_erp
 #: view:res.company:0 field:res.company,accredetion:0
 msgid "Accredetion"
-msgstr "Accredetion"
+msgstr "Recommandation"
 
 #. module: openeducat_erp
 #: selection:op.admission,gender:0 selection:op.faculty,gender:0
@@ -1396,7 +1409,8 @@ msgid "Request Book"
 msgstr "Demander livre"
 
 #. module: openeducat_erp
-#: field:op.admission,photo:0 field:op.faculty,photo:0 field:op.student,photo:0
+#: field:op.admission,photo:0 field:op.faculty,photo:0
+#: field:op.student,photo:0
 msgid "Photo"
 msgstr "Photo"
 
@@ -1433,7 +1447,7 @@ msgstr "Parent Route"
 #. module: openeducat_erp
 #: field:op.faculty,pan_card:0 field:op.student,pan_card:0
 msgid "PAN Card"
-msgstr "PAN Card"
+msgstr "Carte CIN"
 
 #. module: openeducat_erp
 #: field:op.timetable,start_datetime:0
@@ -1458,7 +1472,7 @@ msgstr "Présent?"
 #. module: openeducat_erp
 #: view:op.religion:0
 msgid "Religion Detail"
-msgstr "Religion Détail"
+msgstr "Détail religion"
 
 #. module: openeducat_erp
 #: field:op.admission,family_business:0
@@ -1490,17 +1504,17 @@ msgstr "Utilisateur Ligne"
 #. module: openeducat_erp
 #: view:op.classroom:0
 msgid "Asset Management"
-msgstr "Asset Management"
+msgstr "la gestion d'actifs"
 
 #. module: openeducat_erp
 #: field:op.result.template.line,exam_lines:0
 msgid "Exam Lines"
-msgstr "Lignes d&#39;examen"
+msgstr "Lignes d'examen"
 
 #. module: openeducat_erp
 #: model:ir.actions.report.xml,name:openeducat_erp.report_op_exam_student_lable
 msgid "Print Student Lable"
-msgstr "Imprimer étudiants Lable"
+msgstr "Imprimer étiquette étudiant"
 
 #. module: openeducat_erp
 #: view:op.achievement:0 field:op.achievement,achievement_date:0
@@ -1518,12 +1532,12 @@ msgstr "OpenEduCat"
 #. module: openeducat_erp
 #: view:op.marksheet.register:0 field:op.marksheet.register,total_pass:0
 msgid "Total Pass"
-msgstr "Total col"
+msgstr "Total"
 
 #. module: openeducat_erp
 #: model:res.groups,name:openeducat_erp.group_op_back_office_admin
 msgid "Back Office Admin"
-msgstr "Retour Office Admin"
+msgstr "Admin Back Office"
 
 #. module: openeducat_erp
 #: view:op.faculty:0 field:op.faculty,language:0 view:op.student:0
@@ -1533,7 +1547,7 @@ msgstr "Langue"
 #. module: openeducat_erp
 #: field:op.student,passing_year:0
 msgid "Passing Year"
-msgstr "Passant Année"
+msgstr "Année en cours"
 
 #. module: openeducat_erp
 #: selection:op.faculty,blood_group:0 selection:op.health,blood_group:0
@@ -1582,7 +1596,7 @@ msgstr "Salle de classe"
 #: view:generate.roll.number:0
 #: model:ir.model,name:openeducat_erp.model_generate_roll_number
 msgid "Generate Roll Number"
-msgstr "Générer Numéro de rôle"
+msgstr "Générer Numéro d'enreg."
 
 #. module: openeducat_erp
 #: selection:op.period,hour:0
@@ -1602,7 +1616,7 @@ msgstr "Auteur Détail"
 #. module: openeducat_erp
 #: field:op.faculty,id_number:0 field:op.student,id_number:0
 msgid "ID Card Number"
-msgstr "ID Numéro de la carte"
+msgstr "Numéro CIN"
 
 #. module: openeducat_erp
 #: field:op.student,current_job:0
@@ -1612,7 +1626,7 @@ msgstr "Travail actuel"
 #. module: openeducat_erp
 #: field:generate.roll.number,sufix:0
 msgid "Sufix"
-msgstr "Sufix"
+msgstr "Suffixe"
 
 #. module: openeducat_erp
 #: field:op.book,edition:0 field:op.book.purchase,edition:0
@@ -1620,15 +1634,16 @@ msgid "Edition"
 msgstr "Édition"
 
 #. module: openeducat_erp
-#: view:book.request.queue:0 view:op.admission:0 selection:op.admission,state:0
-#: view:op.exam:0 view:op.placement.offer:0 selection:op.placement.offer,state:0
+#: view:book.request.queue:0 view:op.admission:0
+#: selection:op.admission,state:0 view:op.exam:0 view:op.placement.offer:0
+#: selection:op.placement.offer,state:0
 msgid "Cancel"
 msgstr "Annuler"
 
 #. module: openeducat_erp
 #: view:op.health:0
 msgid "Faculty Name"
-msgstr "Nom Ensignant"
+msgstr "Nom Enseignant"
 
 #. module: openeducat_erp
 #: view:op.faculty:0
@@ -1638,7 +1653,7 @@ msgstr "Renseignements Personnels"
 #. module: openeducat_erp
 #: view:time.table.report:0
 msgid "Time Table Report"
-msgstr "Rapport Table Temps"
+msgstr "Rapport Emploi du Temps"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_author
@@ -1648,10 +1663,11 @@ msgstr "op.author"
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,admission_date:0
 msgid "Admission Date"
-msgstr "Date d&#39;admission"
+msgstr "Date d'admission"
 
 #. module: openeducat_erp
-#: view:op.admission:0 field:op.admission,name:0 view:op.faculty:0 view:op.student:0
+#: view:op.admission:0 field:op.admission,name:0 view:op.faculty:0
+#: view:op.student:0
 msgid "First Name"
 msgstr "Prénom"
 
@@ -1669,7 +1685,7 @@ msgstr "A-ve"
 #. module: openeducat_erp
 #: view:op.assignment:0
 msgid "Allocation Infomation"
-msgstr "Infomation d&#39;attribution"
+msgstr "Infomation d'attribution"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_min_clear_criteria
@@ -1679,7 +1695,7 @@ msgstr "op.min.clear.criteria"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_hostel_room_sub
 msgid "Hostel Rooms"
-msgstr "Auberge de jeunesse Chambres"
+msgstr "Chambres  auberge"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_res_users
@@ -1689,7 +1705,7 @@ msgstr "Utilisateurs"
 #. module: openeducat_erp
 #: report:op.exam.student.lable:0
 msgid "Seating Arrangment for Student Examination"
-msgstr "Coin Arrangement pour l&#39;examen des étudiants"
+msgstr "Arrangement pour l'examen des étudiants"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_achievement
@@ -1710,7 +1726,8 @@ msgstr "Fini"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_library_main_library
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_library_root
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_school_library_root view:op.student:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_school_library_root
+#: view:op.student:0
 msgid "Library"
 msgstr "Bibliothèque"
 
@@ -1718,18 +1735,20 @@ msgstr "Bibliothèque"
 #: field:gen.time.table.line,faculty_id:0
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_faculty_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_faculty_root
-#: field:issue.book,faculty_id:0 selection:issue.book,type:0 view:op.achievement:0
-#: field:op.achievement,faculty_id:0 field:op.activity,faculty_id:0
-#: view:op.assignment:0 field:op.assignment,faculty_id:0
-#: field:op.assignment.sub.history,faculty_id:0 field:op.book.movement,faculty_id:0
-#: selection:op.book.movement,type:0 field:op.book.purchase,faculty_id:0
-#: view:op.exam.res.allocation:0 field:op.exam.res.allocation,faculty_ids:0
-#: view:op.faculty:0 field:op.health,faculty_id:0 view:op.timetable:0
+#: field:issue.book,faculty_id:0 selection:issue.book,type:0
+#: view:op.achievement:0 field:op.achievement,faculty_id:0
+#: field:op.activity,faculty_id:0 view:op.assignment:0
+#: field:op.assignment,faculty_id:0
+#: field:op.assignment.sub.history,faculty_id:0
+#: field:op.book.movement,faculty_id:0 selection:op.book.movement,type:0
+#: field:op.book.purchase,faculty_id:0 view:op.exam.res.allocation:0
+#: field:op.exam.res.allocation,faculty_ids:0 view:op.faculty:0
+#: field:op.health,faculty_id:0 view:op.timetable:0
 #: field:op.timetable,faculty_id:0
 #: model:res.groups,name:openeducat_erp.group_op_faculty
 #: field:time.table.report,faculty_id:0
 msgid "Faculty"
-msgstr "Ensignant"
+msgstr "Enseignant"
 
 #. module: openeducat_erp
 #: field:op.hostel,room_lines:0
@@ -1753,7 +1772,7 @@ msgstr "Change et relancez"
 #. module: openeducat_erp
 #: field:op.result.exam.line,weightage:0
 msgid "Weightage"
-msgstr "Weightage"
+msgstr "Age du poid"
 
 #. module: openeducat_erp
 #: selection:op.exam.attendees,status:0
@@ -1762,14 +1781,15 @@ msgstr "Absent"
 
 #. module: openeducat_erp
 #: view:op.achievement.type:0 field:op.achievement.type,name:0
-#: field:op.allocat.division,name:0 view:op.assignment:0 field:op.assignment,name:0
-#: view:op.attendance.register:0 field:op.attendance.register,name:0
-#: field:op.attendance.sheet,name:0 field:op.author,name:0 field:op.batch,name:0
-#: view:op.book.queue:0 view:op.category:0 field:op.category,name:0
-#: view:op.classroom:0 field:op.classroom,name:0 field:op.course,name:0
-#: field:op.division,name:0 field:op.exam.room,name:0 view:op.exam.type:0
-#: field:op.exam.type,name:0 view:op.facility:0 field:op.facility,Name:0
-#: view:op.hostel:0 field:op.hostel,name:0 field:op.hostel.room,name:0
+#: field:op.allocat.division,name:0 view:op.assignment:0
+#: field:op.assignment,name:0 view:op.attendance.register:0
+#: field:op.attendance.register,name:0 field:op.attendance.sheet,name:0
+#: field:op.author,name:0 field:op.batch,name:0 view:op.book.queue:0
+#: view:op.category:0 field:op.category,name:0 view:op.classroom:0
+#: field:op.classroom,name:0 field:op.course,name:0 field:op.division,name:0
+#: field:op.exam.room,name:0 view:op.exam.type:0 field:op.exam.type,name:0
+#: view:op.facility:0 field:op.facility,Name:0 view:op.hostel:0
+#: field:op.hostel,name:0 field:op.hostel.room,name:0
 #: field:op.library.card.type,name:0 field:op.min.clear.criteria,name:0
 #: view:op.parent:0 field:op.pass.status,name:0 field:op.period,name:0
 #: field:op.publisher,name:0 view:op.religion:0 field:op.religion,name:0
@@ -1777,8 +1797,8 @@ msgstr "Absent"
 #: field:op.route,name:0 view:op.scholarship:0 field:op.scholarship,name:0
 #: view:op.scholarship.type:0 field:op.scholarship.type,name:0
 #: field:op.standard,name:0 field:op.stop,name:0 field:op.subject,name:0
-#: view:op.tag:0 field:op.tag,name:0 field:op.transportation,name:0 view:op.vehicle:0
-#: field:op.vehicle,name:0
+#: view:op.tag:0 field:op.tag,name:0 field:op.transportation,name:0
+#: view:op.vehicle:0 field:op.vehicle,name:0
 msgid "Name"
 msgstr "Nom"
 
@@ -1795,7 +1815,7 @@ msgstr "Date de la demande"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_subject
 msgid "Subject(s) Management"
-msgstr "Sujet (s) de gestion"
+msgstr "Gestion des sujets"
 
 #. module: openeducat_erp
 #: field:op.admission,birth_date:0 field:op.faculty,birth_date:0
@@ -1816,7 +1836,7 @@ msgstr "Affectation Accepté"
 #. module: openeducat_erp
 #: field:op.faculty,login:0
 msgid "Login"
-msgstr "S&#39;identifier"
+msgstr "S'identifier"
 
 #. module: openeducat_erp
 #: field:op.result.template,criteria_ids:0
@@ -1831,7 +1851,7 @@ msgstr "Divisiones"
 #. module: openeducat_erp
 #: view:op.book.queue:0
 msgid "Book Queue Request Details"
-msgstr "Réserver Queue Détails de la demande"
+msgstr "Détails liste d'attente du livre"
 
 #. module: openeducat_erp
 #: field:op.student,language:0
@@ -1859,7 +1879,7 @@ msgstr "op.tag"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_library_card_type_sub
 #: field:op.library.card,library_card_type_id:0 view:op.library.card.type:0
 msgid "Library Card Type"
-msgstr "Bibliothèque Type de carte"
+msgstr "Type de carte Bibliothèque"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_division
@@ -1881,7 +1901,7 @@ msgstr "op.book"
 #: model:ir.actions.report.xml,name:openeducat_erp.report_student_bonafide_certificate
 #: report:student.bonafide.certificate:0
 msgid "Bonafide Certificate"
-msgstr "Bonafide certificat"
+msgstr "certificat de bonne foi"
 
 #. module: openeducat_erp
 #: field:op.min.clear.criteria,result:0 field:op.pass.status,result:0
@@ -1891,29 +1911,31 @@ msgstr "Résultat pour afficher"
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_result_template_line
 msgid "Result template Line"
-msgstr "Résultat modèle Ligne"
+msgstr "Ligne résultat modèle"
 
 #. module: openeducat_erp
 #: view:op.achievement:0 view:op.achievement.type:0 view:op.admission:0
 #: view:op.assignment:0 view:op.assignment.sub.history:0
 #: view:op.assignment.sub.line:0 view:op.attendance.line:0
 #: view:op.attendance.register:0 view:op.attendance.sheet:0 view:op.batch:0
-#: view:op.book:0 view:op.book.movement:0 view:op.book.queue:0 view:op.category:0
-#: view:op.classroom:0 view:op.course:0 view:op.division:0 view:op.exam:0
-#: view:op.exam.attendees:0 view:op.exam.type:0 view:op.facility:0 view:op.faculty:0
-#: view:op.health:0 view:op.hostel:0 view:op.hostel.room:0 view:op.library.card:0
-#: view:op.library.card.type:0 view:op.marksheet.line:0 view:op.marksheet.register:0
-#: view:op.parent:0 view:op.publisher:0 view:op.religion:0 view:op.result.line:0
+#: view:op.book:0 view:op.book.movement:0 view:op.book.queue:0
+#: view:op.category:0 view:op.classroom:0 view:op.course:0 view:op.division:0
+#: view:op.exam:0 view:op.exam.attendees:0 view:op.exam.type:0
+#: view:op.facility:0 view:op.faculty:0 view:op.health:0 view:op.hostel:0
+#: view:op.hostel.room:0 view:op.library.card:0 view:op.library.card.type:0
+#: view:op.marksheet.line:0 view:op.marksheet.register:0 view:op.parent:0
+#: view:op.publisher:0 view:op.religion:0 view:op.result.line:0
 #: view:op.roll.number:0 view:op.route:0 view:op.scholarship:0
-#: view:op.scholarship.type:0 view:op.standard:0 view:op.student:0 view:op.subject:0
-#: view:op.tag:0 view:op.timetable:0 view:op.transportation:0 view:op.vehicle:0
+#: view:op.scholarship.type:0 view:op.standard:0 view:op.student:0
+#: view:op.subject:0 view:op.tag:0 view:op.timetable:0
+#: view:op.transportation:0 view:op.vehicle:0
 msgid "Group By..."
 msgstr "Grouper par ..."
 
 #. module: openeducat_erp
 #: view:op.admission:0 view:op.student:0
 msgid "Educational Detail"
-msgstr "Détail de l&#39;éducation"
+msgstr "Détail de l'éducation"
 
 #. module: openeducat_erp
 #: selection:op.admission,state:0 selection:op.assignment.sub.history,state:0
@@ -1923,8 +1945,9 @@ msgid "Rejected"
 msgstr "Rejeté"
 
 #. module: openeducat_erp
-#: view:op.assignment:0 field:op.assignment,marks:0 view:op.assignment.sub.line:0
-#: field:op.exam.attendees,marks:0 view:op.result.line:0 field:op.result.line,marks:0
+#: view:op.assignment:0 field:op.assignment,marks:0
+#: view:op.assignment.sub.line:0 field:op.exam.attendees,marks:0
+#: view:op.result.line:0 field:op.result.line,marks:0
 msgid "Marks"
 msgstr "Marques"
 
@@ -1966,7 +1989,7 @@ msgstr "Séquence Generation"
 #. module: openeducat_erp
 #: view:op.admission:0 view:op.placement.offer:0
 msgid "Set to Draft"
-msgstr "Set de Projet"
+msgstr "Mettre comme brouillon"
 
 #. module: openeducat_erp
 #: selection:op.period,hour:0
@@ -1996,13 +2019,14 @@ msgstr "arrêtez"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_batch_view
-#: view:op.admission:0 field:op.admission,batch_id:0 field:op.all.student,batch_id:0
-#: view:op.attendance.register:0 field:op.attendance.register,batch_id:0
-#: view:op.batch:0 view:op.exam:0 field:op.exam.session,batch_id:0
-#: field:op.result.template.line,batch_id:0 view:op.roll.number:0
-#: field:op.roll.number,batch_id:0 view:op.student:0 field:op.student,batch_id:0
+#: view:op.admission:0 field:op.admission,batch_id:0
+#: field:op.all.student,batch_id:0 view:op.attendance.register:0
+#: field:op.attendance.register,batch_id:0 view:op.batch:0 view:op.exam:0
+#: field:op.exam.session,batch_id:0 field:op.result.template.line,batch_id:0
+#: view:op.roll.number:0 field:op.roll.number,batch_id:0 view:op.student:0
+#: field:op.student,batch_id:0
 msgid "Batch"
-msgstr "Lot"
+msgstr "Session"
 
 #. module: openeducat_erp
 #: view:res.company:0
@@ -2010,14 +2034,15 @@ msgid "Institute Detail"
 msgstr "Institut Détail"
 
 #. module: openeducat_erp
-#: view:op.achievement.type:0 field:op.achievement.type,code:0 field:op.asset,code:0
-#: view:op.attendance.register:0 field:op.attendance.register,code:0
-#: field:op.batch,code:0 view:op.category:0 field:op.category,code:0
-#: view:op.classroom:0 field:op.classroom,code:0 field:op.course,code:0
-#: field:op.division,code:0 view:op.exam.type:0 field:op.exam.type,code:0
-#: view:op.facility:0 field:op.facility,Code:0 view:op.religion:0
-#: field:op.religion,code:0 field:op.room,code:0 view:op.route:0
-#: field:op.route,code:0 field:op.standard,code:0 field:op.subject,code:0
+#: view:op.achievement.type:0 field:op.achievement.type,code:0
+#: field:op.asset,code:0 view:op.attendance.register:0
+#: field:op.attendance.register,code:0 field:op.batch,code:0
+#: view:op.category:0 field:op.category,code:0 view:op.classroom:0
+#: field:op.classroom,code:0 field:op.course,code:0 field:op.division,code:0
+#: view:op.exam.type:0 field:op.exam.type,code:0 view:op.facility:0
+#: field:op.facility,Code:0 view:op.religion:0 field:op.religion,code:0
+#: field:op.room,code:0 view:op.route:0 field:op.route,code:0
+#: field:op.standard,code:0 field:op.subject,code:0
 msgid "Code"
 msgstr "Code"
 
@@ -2030,7 +2055,7 @@ msgstr "Étudiant (s)"
 #. module: openeducat_erp
 #: field:op.book,queue_ids:0
 msgid "Book Queue"
-msgstr "Réserver Queue"
+msgstr "Liste d'attente livre"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_result_template_line_view
@@ -2047,7 +2072,7 @@ msgstr "Dimanche"
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
 msgid "Stop Name"
-msgstr "Arrêter Nom"
+msgstr "Nom de l'Arrêt"
 
 #. module: openeducat_erp
 #: selection:op.exam,state:0
@@ -2058,7 +2083,7 @@ msgstr "Tenue"
 #: selection:op.admission,gender:0 selection:op.faculty,gender:0
 #: selection:op.student,gender:0
 msgid "Female"
-msgstr "Femelle"
+msgstr "Feminin"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_asset
@@ -2073,7 +2098,7 @@ msgstr "Modifier ..."
 #. module: openeducat_erp
 #: view:op.book.movement:0
 msgid "Book Reservation Detail"
-msgstr "Réserver Détail Réservation"
+msgstr "Détail Réservation Livre"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_standard
@@ -2088,7 +2113,7 @@ msgstr "Nom du pilote"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.admission_analysis_act
 msgid "Admission Analysis Wizard"
-msgstr "Assistant d&#39;analyse Admission"
+msgstr "Assistant d'analyse Admission"
 
 #. module: openeducat_erp
 #: view:op.student:0
@@ -2115,12 +2140,12 @@ msgstr "op.stop"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_exam_res_allocation_view
 #: view:op.exam.res.allocation:0
 msgid "Exam Resource Allocation"
-msgstr "allocation des ressources de l&#39;examen"
+msgstr "allocation des ressources de l'examen"
 
 #. module: openeducat_erp
 #: view:op.admission:0
 msgid "Course By Admission"
-msgstr "Cours En Admission"
+msgstr "Cours par Admission"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_marksheet_line
@@ -2140,7 +2165,7 @@ msgstr "op.room"
 #. module: openeducat_erp
 #: view:op.student:0
 msgid "Alumni Detail"
-msgstr "Anciens Détail"
+msgstr "Détail Anciens Eleves"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_allocat_division
@@ -2150,7 +2175,7 @@ msgstr "op.allocat.division"
 #. module: openeducat_erp
 #: view:op.exam:0
 msgid "Held Exam"
-msgstr "Examen Held"
+msgstr "Examen établi"
 
 #. module: openeducat_erp
 #: report:op.library.report:0 report:op.student.report:0
@@ -2176,9 +2201,10 @@ msgstr "Feuilles de présence"
 
 #. module: openeducat_erp
 #: field:op.exam,total_marks:0 report:op.marksheet:0
-#: field:op.marksheet.line,total_marks:0 field:op.result.exam.line,total_marks:0
+#: field:op.marksheet.line,total_marks:0
+#: field:op.result.exam.line,total_marks:0
 msgid "Total Marks"
-msgstr "Total de points"
+msgstr "Total de notes"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_exam_type
@@ -2189,7 +2215,7 @@ msgstr "op.exam.type"
 #: view:op.course:0 field:op.course,evaluation_type:0 view:op.exam:0
 #: field:op.exam,evaluation_type:0
 msgid "Evaluation Type"
-msgstr "Type d&#39;évaluation"
+msgstr "Type d'évaluation"
 
 #. module: openeducat_erp
 #: field:op.period,hour:0
@@ -2208,8 +2234,9 @@ msgstr "Standard"
 
 #. module: openeducat_erp
 #: view:op.assignment:0 field:op.assignment,submission_date:0
-#: view:op.assignment.sub.history:0 field:op.assignment.sub.history,change_date:0
-#: view:op.assignment.sub.line:0 field:op.assignment.sub.line,submission_date:0
+#: view:op.assignment.sub.history:0
+#: field:op.assignment.sub.history,change_date:0 view:op.assignment.sub.line:0
+#: field:op.assignment.sub.line,submission_date:0
 msgid "Submission Date"
 msgstr "Date de dépôt"
 
@@ -2237,7 +2264,7 @@ msgstr "PM"
 #. module: openeducat_erp
 #: field:op.marksheet.register,generated_date:0
 msgid "Generated Date"
-msgstr "Date de Création"
+msgstr "Date Généré"
 
 #. module: openeducat_erp
 #: view:op.hostel.room:0
@@ -2276,14 +2303,15 @@ msgstr "Contacts partenaires"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_scholarship_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_scholarship_sub view:op.scholarship:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_scholarship_sub
+#: view:op.scholarship:0
 msgid "Scholarship"
 msgstr "Bourse"
 
 #. module: openeducat_erp
 #: field:op.exam.res.allocation,exam_session_ids:0
 msgid "Select Exam Session"
-msgstr "Sélectionnez session d&#39;examen"
+msgstr "Sélectionnez session d'examen"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_hostel
@@ -2293,20 +2321,21 @@ msgstr "op.hostel"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_religion_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_religion_sub
-#: field:op.admission,religion_id:0 view:op.faculty:0 field:op.faculty,religion:0
-#: view:op.religion:0 view:op.student:0 field:op.student,religion:0
+#: field:op.admission,religion_id:0 view:op.faculty:0
+#: field:op.faculty,religion:0 view:op.religion:0 view:op.student:0
+#: field:op.student,religion:0
 msgid "Religion"
 msgstr "Religion"
 
 #. module: openeducat_erp
 #: field:op.faculty,bank_acc_num:0 field:op.student,bank_acc_num:0
 msgid "Bank Acc Number"
-msgstr "Banque Nombre Acc"
+msgstr "Numéro Compte Bancaire"
 
 #. module: openeducat_erp
 #: report:op.library.report:0
 msgid "Library Card Type :"
-msgstr "Bibliothèque Type de carte:"
+msgstr "Type de carte Bibliothèque:"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_general
@@ -2314,16 +2343,17 @@ msgid "General Management"
 msgstr "Direction Générale"
 
 #. module: openeducat_erp
-#: report:op.marksheet:0 view:op.marksheet.line:0 field:op.marksheet.line,result:0
-#: field:op.marksheet.line,result_line:0 view:op.result.exam.line:0
+#: report:op.marksheet:0 view:op.marksheet.line:0
+#: field:op.marksheet.line,result:0 field:op.marksheet.line,result_line:0
+#: view:op.result.exam.line:0
 msgid "Result"
 msgstr "Résultat"
 
 #. module: openeducat_erp
-#: model:ir.actions.act_window,name:openeducat_erp.issue_book_act view:op.book:0
-#: view:op.book.movement:0
+#: model:ir.actions.act_window,name:openeducat_erp.issue_book_act
+#: view:op.book:0 view:op.book.movement:0
 msgid "Issue Book"
-msgstr "Problème livre"
+msgstr "Livre prété"
 
 #. module: openeducat_erp
 #: field:op.result.template.line,detailed_report:0
@@ -2331,8 +2361,9 @@ msgid "Detailed Report"
 msgstr "Rapport détaillé"
 
 #. module: openeducat_erp
-#: field:admission.analysis,start_date:0 field:generate.time.table,start_date:0
-#: view:op.batch:0 field:op.batch,start_date:0 field:time.table.report,start_date:0
+#: field:admission.analysis,start_date:0
+#: field:generate.time.table,start_date:0 view:op.batch:0
+#: field:op.batch,start_date:0 field:time.table.report,start_date:0
 msgid "Start Date"
 msgstr "Date De Début"
 
@@ -2341,12 +2372,12 @@ msgstr "Date De Début"
 #: model:ir.actions.act_window,name:openeducat_erp.open_board_faculty
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_dashboard_faculty
 msgid "Faculty Dashboard"
-msgstr "Ensignant Dashboard"
+msgstr "Tableau de bord Enseignant"
 
 #. module: openeducat_erp
 #: view:board.board:0
 msgid "Period Of Today"
-msgstr "Période Of Today"
+msgstr "Période d'aujourd'hui"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.student_hall_ticket_act
@@ -2357,17 +2388,17 @@ msgstr "Billets Salle étudiants"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_batch_sub
 msgid "Batches"
-msgstr "Lots"
+msgstr "Sessions"
 
 #. module: openeducat_erp
 #: report:student.bonafide.certificate:0
 msgid "the school / collage is ("
-msgstr "l&#39;école / collage est ("
+msgstr "l'école / Institut est ("
 
 #. module: openeducat_erp
 #: constraint:op.book.movement:0
 msgid "Issue Date Should be greater than Return Date."
-msgstr "Date d&#39;émission doit être supérieure à Date de retour."
+msgstr "Date d'émission doit être supérieure à Date de retour."
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_student_attendance
@@ -2402,8 +2433,9 @@ msgstr "AM / PM"
 
 #. module: openeducat_erp
 #: view:op.admission:0 view:op.book:0 selection:op.book.purchase,state:0
-#: view:op.book.queue:0 selection:op.book.queue,state:0 view:op.placement.offer:0
-#: view:op.scholarship:0 selection:op.scholarship,state:0
+#: view:op.book.queue:0 selection:op.book.queue,state:0
+#: view:op.placement.offer:0 view:op.scholarship:0
+#: selection:op.scholarship,state:0
 msgid "Reject"
 msgstr "Rejeter"
 
@@ -2440,12 +2472,12 @@ msgstr "Adresse:"
 #. module: openeducat_erp
 #: view:op.exam:0
 msgid "Schedule Exam"
-msgstr "Annexe examen"
+msgstr "Plannifier examen"
 
 #. module: openeducat_erp
 #: view:exam.seat.arrange:0
 msgid "Exam Seating Arrangement"
-msgstr "Exam les places"
+msgstr "les places de l'Exam"
 
 #. module: openeducat_erp
 #: view:op.faculty:0 view:op.student:0
@@ -2455,7 +2487,7 @@ msgstr "Catégorie:"
 #. module: openeducat_erp
 #: view:gen.time.table.line:0
 msgid "TimeTable Line"
-msgstr "TimeTable Ligne"
+msgstr "Ligne emploi du temps"
 
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,phone:0 view:op.student:0
@@ -2465,7 +2497,7 @@ msgstr "Téléphone"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_exam_result
 msgid "Exam Result"
-msgstr "Résultat de l&#39;examen"
+msgstr "Résultat de l'examen"
 
 #. module: openeducat_erp
 #: field:op.vehicle,active:0
@@ -2480,12 +2512,12 @@ msgstr "Divisions"
 #. module: openeducat_erp
 #: view:op.admission:0 selection:op.admission,state:0
 msgid "Enroll"
-msgstr "Se inscrire"
+msgstr "S'inscrire"
 
 #. module: openeducat_erp
 #: field:op.result.line,result_id:0
 msgid "MarkSheet Line"
-msgstr "Marksheet Ligne"
+msgstr "Ligne relevé de notes"
 
 #. module: openeducat_erp
 #: view:op.exam:0 field:op.exam,exam_code:0 field:op.exam.session,exam_code:0
@@ -2520,15 +2552,15 @@ msgstr "op.course"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_timetable_view
 #: model:ir.model,name:openeducat_erp.model_op_timetable
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_timetable
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_timetable_main view:op.faculty:0
-#: view:op.timetable:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_timetable_main
+#: view:op.faculty:0 view:op.timetable:0
 msgid "Time Table"
-msgstr "Tableau Temps"
+msgstr "Emploi du Temps"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_book_queue
 msgid " Book Queue Request Detail for Students and Faculties "
-msgstr "Réserver Queue Demande Détail pour les étudiants et Ensignants"
+msgstr "Détail demande de prêt du livre pour les étudiants et Enseignants"
 
 #. module: openeducat_erp
 #: view:op.allocat.division:0
@@ -2543,7 +2575,7 @@ msgstr "Auberges de jeunesse"
 #. module: openeducat_erp
 #: field:op.subject,grade_waitage:0
 msgid "Grade Waitage"
-msgstr "Niveau Waitage"
+msgstr "Niveau période d'attente"
 
 #. module: openeducat_erp
 #: view:op.health:0 field:op.health,major_diseases_note:0
@@ -2588,7 +2620,7 @@ msgid "Done"
 msgstr "Fini"
 
 #. module: openeducat_erp
-#: field:op.admission,fees:0
+#: field:op.batch,fees:0
 msgid "Fees"
 msgstr "Honoraires"
 
@@ -2600,7 +2632,7 @@ msgstr "Validé"
 #. module: openeducat_erp
 #: view:op.result.template:0
 msgid "Passing Status"
-msgstr "Passant Statut"
+msgstr "Statut Passant"
 
 #. module: openeducat_erp
 #: field:op.exam,min_marks:0 report:op.marksheet:0
@@ -2611,7 +2643,7 @@ msgstr "Passer des marques"
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,application_number:0
 msgid "Application Number"
-msgstr "Nombre d&#39;application"
+msgstr "Numéro de la demande"
 
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,city:0 view:op.student:0
@@ -2621,7 +2653,7 @@ msgstr "Ville"
 #. module: openeducat_erp
 #: field:op.student,placement_line:0
 msgid "Placement Details"
-msgstr "Placement Détails"
+msgstr "Détail du stage"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_exam_res_allocation
@@ -2649,7 +2681,7 @@ msgstr "AB-ve"
 #. module: openeducat_erp
 #: view:op.batch:0
 msgid "Batch Details"
-msgstr "Batch Détails"
+msgstr "Détails session"
 
 #. module: openeducat_erp
 #: field:op.exam.res.allocation,exam_ids:0
@@ -2674,13 +2706,13 @@ msgstr "Produit"
 #. module: openeducat_erp
 #: view:op.admission:0 view:op.student:0
 msgid "ZIP"
-msgstr "Postal"
+msgstr "Code Postal"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_assignment_sub_line_view
 #: view:op.assignment.sub.line:0
 msgid "Assignment Sub Line"
-msgstr "Attribution de ligne sous"
+msgstr "Détail devoir"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_parent
@@ -2690,7 +2722,7 @@ msgstr "op.parent"
 #. module: openeducat_erp
 #: field:op.transportation,stop:0
 msgid "Stop"
-msgstr "Arrêtez"
+msgstr "Arrêt"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_religion
@@ -2700,18 +2732,18 @@ msgstr "op.religion"
 #. module: openeducat_erp
 #: view:student.hall.ticket:0
 msgid "Student Hall Ticket"
-msgstr "Étudiant salle Ticket"
+msgstr "Ticket salle Étudiant"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_attendance_line_view
 #: view:op.attendance.line:0 view:op.attendance.sheet:0
 #: field:op.attendance.sheet,attendance_line:0
 msgid "Attendance Line"
-msgstr "Participation Ligne"
+msgstr "Ligne des présences"
 
 #. module: openeducat_erp
-#: view:op.admission:0 field:op.author,address:0 field:op.publisher,address_id:0
-#: view:op.student:0
+#: view:op.admission:0 field:op.author,address:0
+#: field:op.publisher,address_id:0 view:op.student:0
 msgid "Address"
 msgstr "Adresse"
 
@@ -2721,7 +2753,7 @@ msgstr "Adresse"
 #: view:op.result.exam.line:0 view:op.result.line:0
 #: field:op.result.line,exam_tmpl_id:0 view:op.result.template.line:0
 msgid "Exam Template"
-msgstr "Modèle d&#39;examen"
+msgstr "Modèle d'examen"
 
 #. module: openeducat_erp
 #: view:op.faculty:0 field:op.faculty,nationality:0 view:op.student:0
@@ -2736,10 +2768,11 @@ msgstr "Gestion des cours"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_roll_number_view
-#: model:ir.ui.menu,name:openeducat_erp.menu_op_roll_number_sub view:op.roll.number:0
-#: field:op.roll.number,roll_number:0 field:op.student,roll_number_line:0
+#: model:ir.ui.menu,name:openeducat_erp.menu_op_roll_number_sub
+#: view:op.roll.number:0 field:op.roll.number,roll_number:0
+#: field:op.student,roll_number_line:0
 msgid "Roll Number"
-msgstr "Numéro de rôle"
+msgstr "Numéro"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_classroom_view
@@ -2749,7 +2782,8 @@ msgstr "Salle de classe"
 
 #. module: openeducat_erp
 #: field:admission.analysis,end_date:0 field:generate.time.table,end_date:0
-#: view:op.batch:0 field:op.batch,end_date:0 field:time.table.report,end_date:0
+#: view:op.batch:0 field:op.batch,end_date:0
+#: field:time.table.report,end_date:0
 msgid "End Date"
 msgstr "Date de fin"
 
@@ -2759,7 +2793,8 @@ msgid "op.student"
 msgstr "op.student"
 
 #. module: openeducat_erp
-#: field:exam.seat.arrange,room_id:0 field:op.exam.session,room_id:0 view:op.room:0
+#: field:exam.seat.arrange,room_id:0 field:op.exam.session,room_id:0
+#: view:op.room:0
 msgid "Room"
 msgstr "Salle"
 
@@ -2771,7 +2806,7 @@ msgstr "Demandé"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_hostel
 msgid "Hostel Management"
-msgstr "Gestion de l&#39;auberge"
+msgstr "Gestion de l'auberge"
 
 #. module: openeducat_erp
 #: field:op.result.template,line_ids:0
@@ -2802,14 +2837,14 @@ msgstr "Adresse postale"
 #: code:addons/openeducat_erp/op_book/op_book.py:52 view:return.book:0
 #, python-format
 msgid "Book Return"
-msgstr "Réserver Retourner"
+msgstr "Retour du livre"
 
 #. module: openeducat_erp
 #. openerp-web
 #: code:addons/openeducat_erp/static/src/xml/base.xml:11
 #, python-format
 msgid "Tech Receptives"
-msgstr "Tech voyagistes d&#39;accueil"
+msgstr "Novisoft"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_attendance_line_sub
@@ -2824,7 +2859,7 @@ msgstr "op.health.line"
 #. module: openeducat_erp
 #: field:op.admission,state_id:0
 msgid "States"
-msgstr "Unis"
+msgstr "Etats"
 
 #. module: openeducat_erp
 #: view:op.hostel.room:0 field:op.hostel.room,rent:0
@@ -2834,7 +2869,7 @@ msgstr "Louer"
 #. module: openeducat_erp
 #: view:op.course:0
 msgid "Course Detail"
-msgstr "Cours Détail"
+msgstr "Détail Cours"
 
 #. module: openeducat_erp
 #: field:op.library.card.type,duration:0 field:op.period,duration:0
@@ -2860,7 +2895,7 @@ msgstr "book.request.queue"
 #. module: openeducat_erp
 #: field:op.admission,nbr:0
 msgid "# of Admission"
-msgstr "# D&#39;admission"
+msgstr "# D'admission"
 
 #. module: openeducat_erp
 #: view:op.all.student:0
@@ -2870,7 +2905,7 @@ msgstr "Confirmez sélection des étudiants"
 #. module: openeducat_erp
 #: view:book.request.queue:0
 msgid "Add Book Queue Request"
-msgstr "ISBN Queue Demande"
+msgstr "Ajouter demande de prêt du livre"
 
 #. module: openeducat_erp
 #: view:op.parent:0 field:op.parent,student_ids:0
@@ -2907,16 +2942,16 @@ msgstr "Offre"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_assignment_view
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_assignment_faculty
 #: view:op.assignment:0 view:op.assignment.sub.history:0
-#: field:op.assignment.sub.history,assign_sub_id:0 view:op.assignment.sub.line:0
-#: field:op.assignment.sub.line,assignment_id:0 view:op.student:0
-#: field:op.student,allocation_ids:0
+#: field:op.assignment.sub.history,assign_sub_id:0
+#: view:op.assignment.sub.line:0 field:op.assignment.sub.line,assignment_id:0
+#: view:op.student:0 field:op.student,allocation_ids:0
 msgid "Assignment"
-msgstr "Affectation"
+msgstr "Devoir"
 
 #. module: openeducat_erp
 #: view:op.student:0
 msgid "Roll Number:"
-msgstr "Numéro de rôle:"
+msgstr "Numéro:"
 
 #. module: openeducat_erp
 #: selection:gen.time.table.line,day:0 view:generate.time.table:0
@@ -2948,7 +2983,7 @@ msgstr "Les deux"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_marksheet_line_sub
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_marksheet_line_sub_faculty
 msgid "Marksheet Lines"
-msgstr "Marksheet Lines"
+msgstr "Ligne du relevée de notes"
 
 #. module: openeducat_erp
 #: view:book.request.queue:0
@@ -2960,7 +2995,7 @@ msgstr "Marksheet Lines"
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_book_queue_sub view:op.book:0
 #: view:op.book.queue:0
 msgid "Book Queue Request"
-msgstr "Réserver Queue Demande"
+msgstr "Liste d'attente du livre"
 
 #. module: openeducat_erp
 #: field:op.student,phone:0
@@ -2975,7 +3010,7 @@ msgstr "op.category"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_standard
 msgid "Standard Management"
-msgstr "Standard Management"
+msgstr "Gestion Standard"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_classroom_sub
@@ -3020,12 +3055,12 @@ msgstr "Rue ..."
 #. module: openeducat_erp
 #: field:op.timetable,color:0
 msgid "Color Index"
-msgstr "Color Index"
+msgstr "Index couleur"
 
 #. module: openeducat_erp
 #: view:issue.book:0 view:reserve.book:0 view:return.book:0 view:return.date:0
 msgid "OK"
-msgstr "D&#39;ACCORD"
+msgstr "OK"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_marksheet_register
@@ -3036,7 +3071,7 @@ msgstr "op.marksheet.register"
 #: field:issue.book,quantity:0 view:op.book:0 field:op.book,number_book:0
 #: field:op.book.movement,quantity:0
 msgid "No. Of Books"
-msgstr "No. de livres"
+msgstr "Nombre de livres"
 
 #. module: openeducat_erp
 #: field:op.result.template.line,result_id:0
@@ -3053,22 +3088,22 @@ msgstr "Sujets"
 #. module: openeducat_erp
 #: view:op.student:0
 msgid "Alumni Details"
-msgstr "Anciens Détails"
+msgstr "Détails Anciens Eelves"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_gen_time_table_line
 msgid "Generate Time Table Lines"
-msgstr "Générer Temps Tableau Lines"
+msgstr "Générer Emploi du temps"
 
 #. module: openeducat_erp
 #: view:op.health:0
 msgid "Checkup Details"
-msgstr "Checkup Détails"
+msgstr "Détails Checkup"
 
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
 msgid "Student Detail"
-msgstr "Détail de l&#39;étudiant"
+msgstr "Détail de l'étudiant"
 
 #. module: openeducat_erp
 #: view:op.admission:0 selection:op.admission,state:0 view:op.scholarship:0
@@ -3085,7 +3120,7 @@ msgstr "Section"
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_assignment_sub_history_view
 #: view:op.assignment.sub.history:0
 msgid "Assignment Sub History"
-msgstr "Affectation Sous Histoire"
+msgstr "Historique devoir"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_subject
@@ -3106,23 +3141,24 @@ msgstr "Email"
 #: view:exam.seat.arrange:0
 #: model:ir.actions.act_window,name:openeducat_erp.exam_seat_arrange_act
 msgid "Exam Seat Arrange"
-msgstr "Siège de l&#39;examen Disposez"
+msgstr "Disposez Siège de l'examen"
 
 #. module: openeducat_erp
 #: report:op.library.report:0
 msgid "Library Card No :"
-msgstr "Bibliothèque Aucune carte:"
+msgstr "Bibliothèque No. carte:"
 
 #. module: openeducat_erp
 #: view:op.book.movement:0 field:op.book.movement,actual_return_date:0
-#: field:return.book,actual_return_date:0 field:return.date,actual_return_date:0
+#: field:return.book,actual_return_date:0
+#: field:return.date,actual_return_date:0
 msgid "Actual Return Date"
-msgstr "Actual Date de retour"
+msgstr "Date de retour réel"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_health
 msgid " Health Detail for Students and Faculties "
-msgstr "Détail de la santé pour les étudiants et les Ensignants"
+msgstr "Détail de la santé pour les étudiants et les Enseignants"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_vehicle
@@ -3130,10 +3166,10 @@ msgid "op.vehicle"
 msgstr "op.vehicle"
 
 #. module: openeducat_erp
-#: view:op.health:0 view:op.placement.offer:0 field:op.placement.offer,student_id:0
-#: report:op.transport.detail.report:0
+#: view:op.health:0 view:op.placement.offer:0
+#: field:op.placement.offer,student_id:0 report:op.transport.detail.report:0
 msgid "Student Name"
-msgstr "Nom de l&#39;élève"
+msgstr "Nom de l'élève"
 
 #. module: openeducat_erp
 #: report:student.bonafide.certificate:0
@@ -3143,7 +3179,7 @@ msgstr "porte un caractère bien moral."
 #. module: openeducat_erp
 #: view:op.admission:0 selection:op.admission,state:0
 msgid "Pending"
-msgstr "En attendant"
+msgstr "En attente"
 
 #. module: openeducat_erp
 #: field:op.placement.offer,offer_package:0
@@ -3180,8 +3216,9 @@ msgid "Total Absent"
 msgstr "Absent total"
 
 #. module: openeducat_erp
-#: view:admission.analysis:0 view:issue.book:0 view:reserve.book:0 view:return.book:0
-#: view:return.date:0 view:student.hall.ticket:0 view:student.migrate:0
+#: view:admission.analysis:0 view:issue.book:0 view:reserve.book:0
+#: view:return.book:0 view:return.date:0 view:student.hall.ticket:0
+#: view:student.migrate:0
 msgid "_Cancel"
 msgstr "_Cancel"
 
@@ -3195,7 +3232,7 @@ msgstr "Fourni par"
 #. module: openeducat_erp
 #: view:op.book.purchase:0
 msgid "Purchase Request"
-msgstr "Demande d&#39;achat"
+msgstr "Demande d'achat"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_transportation
@@ -3205,7 +3242,7 @@ msgstr "op.transportation"
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.student,gr_no:0
 msgid "GR Number"
-msgstr "Nombre GR"
+msgstr "Numéro GR"
 
 #. module: openeducat_erp
 #: field:op.health,regular_checkup:0
@@ -3220,7 +3257,7 @@ msgstr "Signature"
 #. module: openeducat_erp
 #: view:op.student:0
 msgid "Batch:"
-msgstr "Batch:"
+msgstr "Session:"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_tag_sub view:op.book:0
@@ -3239,7 +3276,7 @@ msgstr "Étudiants"
 #. module: openeducat_erp
 #: view:op.all.student:0
 msgid "Add Absent Student Student(s)"
-msgstr "Ajouter Absent Étudiant Étudiant (s)"
+msgstr "Ajouter Étudiant(s) Absent(s)"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_exam_room
@@ -3252,8 +3289,9 @@ msgid "Allocated Students "
 msgstr "Les étudiants affectés"
 
 #. module: openeducat_erp
-#: view:op.faculty:0 field:op.faculty,blood_group:0 field:op.health,blood_group:0
-#: view:op.student:0 field:op.student,blood_group:0
+#: view:op.faculty:0 field:op.faculty,blood_group:0
+#: field:op.health,blood_group:0 view:op.student:0
+#: field:op.student,blood_group:0
 msgid "Blood Group"
 msgstr "Groupe sanguin"
 
@@ -3266,12 +3304,12 @@ msgstr "Groupe sanguin"
 #: field:op.result.template.line,exam_session_id:0
 #: field:student.hall.ticket,exam_session_id:0
 msgid "Exam Session"
-msgstr "Session d&#39;examen"
+msgstr "Session d'examen"
 
 #. module: openeducat_erp
 #: view:admission.analysis:0
 msgid "Print Admission Analysis Report"
-msgstr "Imprimer Admission Rapport d&#39;analyse"
+msgstr "Imprimer Rapport d'analyse d'admission"
 
 #. module: openeducat_erp
 #: view:op.classroom:0 field:op.exam.room,capacity:0 view:op.vehicle:0
@@ -3282,7 +3320,7 @@ msgstr "Capacité"
 #. module: openeducat_erp
 #: view:op.assignment.sub.line:0
 msgid "Re Submit Assignment"
-msgstr "Re Proposez Affectation"
+msgstr "Re envoyer le devoir"
 
 #. module: openeducat_erp
 #: view:book.request.queue:0
@@ -3293,20 +3331,20 @@ msgstr "Ajouter"
 #: selection:op.admission,state:0 selection:op.assignment,state:0
 #: selection:op.assignment.sub.history,state:0
 #: selection:op.assignment.sub.line,state:0 selection:op.book.purchase,state:0
-#: selection:op.marksheet.register,status:0 selection:op.placement.offer,state:0
-#: selection:op.scholarship,state:0
+#: selection:op.marksheet.register,status:0
+#: selection:op.placement.offer,state:0 selection:op.scholarship,state:0
 msgid "Draft"
 msgstr "Ébauche"
 
 #. module: openeducat_erp
 #: field:op.min.clear.criteria,number:0
 msgid "Number of Failed Subject"
-msgstr "Nombre de Failed Sujet"
+msgstr "Nombre de Sujet en échec"
 
 #. module: openeducat_erp
 #: field:op.student,roll_number:0
 msgid "Current Roll Number"
-msgstr "Nombre actuel Roll"
+msgstr "Nombre actuel d'enreg."
 
 #. module: openeducat_erp
 #: field:op.transportation,from1:0
@@ -3321,15 +3359,16 @@ msgstr "Soumissions"
 #. module: openeducat_erp
 #: view:op.timetable:0
 msgid "Faculty:"
-msgstr "Ensignant:"
+msgstr "Enseignant:"
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_exam_view
 #: view:op.exam:0 field:op.exam,name:0 view:op.exam.attendees:0
 #: field:op.exam.attendees,exam_id:0 view:op.exam.res.allocation:0
 #: view:op.exam.session:0 field:op.exam.session,name:0
-#: field:op.marksheet.register,exam_session_id:0 field:op.result.exam.line,exam_id:0
-#: view:op.result.line:0 field:op.result.line,exam_id:0
+#: field:op.marksheet.register,exam_session_id:0
+#: field:op.result.exam.line,exam_id:0 view:op.result.line:0
+#: field:op.result.line,exam_id:0
 msgid "Exam"
 msgstr "Exam"
 
@@ -3341,7 +3380,7 @@ msgstr "Normal"
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.op_all_student_act
 msgid "Attandance Sheet Import"
-msgstr "Attandance Fiche d&#39;importation"
+msgstr "Importation Fiche de présence"
 
 #. module: openeducat_erp
 #: report:op.marksheet:0
@@ -3351,7 +3390,7 @@ msgstr "Résumé des résultats"
 #. module: openeducat_erp
 #: field:op.admission,street2:0 view:op.student:0
 msgid "Street2"
-msgstr "Street2"
+msgstr "Rue2"
 
 #. module: openeducat_erp
 #: view:op.faculty:0 view:op.student:0
@@ -3361,7 +3400,7 @@ msgstr "Détail Bibliothèque"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_marksheet_register_sub
 msgid "Marksheet Registers"
-msgstr "Marksheet registres"
+msgstr "Registres relevée de note"
 
 #. module: openeducat_erp
 #: view:op.assignment.sub.line:0 field:op.assignment.sub.line,history_line:0
@@ -3371,7 +3410,7 @@ msgstr "Historique des modifications"
 #. module: openeducat_erp
 #: report:op.library.report:0
 msgid "Issue Date :"
-msgstr "Date d&#39;émission:"
+msgstr "Date d'émission:"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_batch
@@ -3381,7 +3420,7 @@ msgstr "op.batch"
 #. module: openeducat_erp
 #: model:ir.actions.report.xml,name:openeducat_erp.report_op_book_barcode
 msgid "Book Barcode"
-msgstr "Réserver Barcode"
+msgstr "Barcode du livre"
 
 #. module: openeducat_erp
 #: selection:op.assignment.sub.history,state:0
@@ -3412,7 +3451,8 @@ msgstr "À Ce Jour"
 
 #. module: openeducat_erp
 #: view:op.admission:0 field:op.admission,middle_name:0 view:op.faculty:0
-#: field:op.faculty,middle_name:0 view:op.student:0 field:op.student,middle_name:0
+#: field:op.faculty,middle_name:0 view:op.student:0
+#: field:op.student,middle_name:0
 msgid "Middle Name"
 msgstr "Deuxième Nom"
 
@@ -3427,8 +3467,8 @@ msgid "op.assignment.sub.line"
 msgstr "op.assignment.sub.line"
 
 #. module: openeducat_erp
-#: field:op.period,sequence:0 field:op.standard,sequence:0 field:op.stop,sequence:0
-#: report:op.transport.detail.report:0
+#: field:op.period,sequence:0 field:op.standard,sequence:0
+#: field:op.stop,sequence:0 report:op.transport.detail.report:0
 msgid "Sequence"
 msgstr "Séquence"
 
@@ -3449,10 +3489,10 @@ msgid "Vehicle Detail"
 msgstr "Détail du véhicule"
 
 #. module: openeducat_erp
-#: view:generate.roll.number:0 view:generate.time.table:0 view:student.attendance:0
-#: view:time.table.report:0
+#: view:generate.roll.number:0 view:generate.time.table:0
+#: view:student.attendance:0 view:time.table.report:0
 msgid "Close"
-msgstr "Près"
+msgstr "Fermer"
 
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
@@ -3488,19 +3528,19 @@ msgstr "Jeudi"
 #. module: openeducat_erp
 #: view:op.book:0
 msgid "Education Details"
-msgstr "Détails d&#39;éducation"
+msgstr "Détails d'éducation"
 
 #. module: openeducat_erp
 #: field:op.library.card,issue_date:0
 msgid "Issue Date"
-msgstr "Date d&#39;émission"
+msgstr "Date d'émission"
 
 #. module: openeducat_erp
 #: view:board.board:0
 #: model:ir.actions.act_window,name:openeducat_erp.open_board_student
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_student_dashboard
 msgid "Student Dashboard"
-msgstr "Tableau de bord de l&#39;élève"
+msgstr "Tableau de bord de l'élève"
 
 #. module: openeducat_erp
 #: report:op.transport.detail.report:0
@@ -3516,7 +3556,7 @@ msgstr "Mouvement livre"
 #. module: openeducat_erp
 #: field:op.admission,gr_no_old:0
 msgid "GR Number old"
-msgstr "GR Nombre ancienne"
+msgstr "ancien numéro GR"
 
 #. module: openeducat_erp
 #: view:op.book.movement:0
@@ -3534,7 +3574,7 @@ msgstr "Description"
 #. module: openeducat_erp
 #: constraint:op.exam:0 constraint:op.exam.session:0
 msgid "Start Time Should be greater than End Time ."
-msgstr "Heure de départ doit être supérieure à l&#39;heure de fin."
+msgstr "Heure de départ doit être supérieure à l'heure de fin."
 
 #. module: openeducat_erp
 #: selection:op.period,minute:0
@@ -3544,7 +3584,7 @@ msgstr "45"
 #. module: openeducat_erp
 #: constraint:op.hostel.room:0
 msgid "Room capacity Over."
-msgstr "Capacité de la chambre cours."
+msgstr "Capacité de la salle dépassée."
 
 #. module: openeducat_erp
 #: model:ir.actions.act_window,name:openeducat_erp.act_open_op_student_view
@@ -3552,19 +3592,19 @@ msgstr "Capacité de la chambre cours."
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_student_main_parent
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_student_main_student
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_student_root
-#: field:issue.book,student_id:0 selection:issue.book,type:0 view:op.achievement:0
-#: field:op.achievement,student_id:0 field:op.activity,student_id:0
-#: field:op.admission,student_id:0 view:op.allocat.division:0
-#: view:op.assignment.sub.line:0 field:op.assignment.sub.line,student_id:0
-#: view:op.attendance.line:0 field:op.attendance.line,student_id:0
-#: view:op.book.movement:0 field:op.book.movement,student_id:0
-#: selection:op.book.movement,type:0 field:op.book.purchase,student_id:0
-#: field:op.exam.attendees,student_id:0 view:op.exam.res.allocation:0
-#: field:op.exam.res.allocation,student_ids:0 view:op.exam.room:0
-#: field:op.health,student_id:0 view:op.marksheet.line:0
+#: field:issue.book,student_id:0 selection:issue.book,type:0
+#: view:op.achievement:0 field:op.achievement,student_id:0
+#: field:op.activity,student_id:0 field:op.admission,student_id:0
+#: view:op.allocat.division:0 view:op.assignment.sub.line:0
+#: field:op.assignment.sub.line,student_id:0 view:op.attendance.line:0
+#: field:op.attendance.line,student_id:0 view:op.book.movement:0
+#: field:op.book.movement,student_id:0 selection:op.book.movement,type:0
+#: field:op.book.purchase,student_id:0 field:op.exam.attendees,student_id:0
+#: view:op.exam.res.allocation:0 field:op.exam.res.allocation,student_ids:0
+#: view:op.exam.room:0 field:op.health,student_id:0 view:op.marksheet.line:0
 #: field:op.marksheet.line,student_id:0 field:op.result.line,student_id:0
-#: view:op.roll.number:0 field:op.roll.number,student_id:0 view:op.scholarship:0
-#: field:op.scholarship,student_id:0 view:op.student:0
+#: view:op.roll.number:0 field:op.roll.number,student_id:0
+#: view:op.scholarship:0 field:op.scholarship,student_id:0 view:op.student:0
 #: model:res.groups,name:openeducat_erp.group_op_student
 #: selection:time.table.report,state:0
 msgid "Student"
@@ -3609,7 +3649,8 @@ msgid "Select Teacher/Student"
 msgstr "Sélectionnez ce professeur / étudiant"
 
 #. module: openeducat_erp
-#: field:op.admission,gender:0 field:op.faculty,gender:0 field:op.student,gender:0
+#: field:op.admission,gender:0 field:op.faculty,gender:0
+#: field:op.student,gender:0
 msgid "Gender"
 msgstr "Sexe"
 
@@ -3634,7 +3675,7 @@ msgstr "Examens"
 #. module: openeducat_erp
 #: model:ir.actions.report.xml,name:openeducat_erp.report_op_student
 msgid "Student IDcard"
-msgstr "Étudiant IDcard"
+msgstr "CIN Étudiant"
 
 #. module: openeducat_erp
 #: model:ir.model,name:openeducat_erp.model_op_scholarship
@@ -3651,7 +3692,7 @@ msgstr "op.attendance.line"
 #: view:op.marksheet.line:0 view:op.result.line:0
 #: field:op.result.line,marksheet_line_id:0
 msgid "Marksheet Line"
-msgstr "Marksheet Ligne"
+msgstr "Ligne relevée de note"
 
 #. module: openeducat_erp
 #: field:op.book.movement,partner_id:0
@@ -3666,7 +3707,7 @@ msgstr "op.roll.number"
 #. module: openeducat_erp
 #: field:op.course,payment_term:0 field:op.standard,payment_term:0
 msgid "Payment Term"
-msgstr "Limite de paiement"
+msgstr "Date Limite de paiement"
 
 #. module: openeducat_erp
 #: view:op.book:0 selection:op.book.purchase,state:0 view:op.book.queue:0
@@ -3682,7 +3723,7 @@ msgstr "return.date"
 #. module: openeducat_erp
 #: report:op.marksheet:0
 msgid "Exam Code:"
-msgstr "code de l&#39;examen:"
+msgstr "code de l'examen:"
 
 #. module: openeducat_erp
 #: field:op.admission,street:0
@@ -3690,8 +3731,8 @@ msgid "Street"
 msgstr "Rue"
 
 #. module: openeducat_erp
-#: model:ir.actions.act_window,name:openeducat_erp.return_book_act view:op.book:0
-#: view:op.book.movement:0
+#: model:ir.actions.act_window,name:openeducat_erp.return_book_act
+#: view:op.book:0 view:op.book.movement:0
 msgid "Return Book"
 msgstr "Retour livre"
 
