@@ -29,7 +29,7 @@ class op_batch(osv.osv):
             'start_date': fields.date(string='Start Date', required=True),
             'end_date': fields.date(string='End Date', required=True),
             'course_id': fields.many2one('op.course', string='Course', required=True),
-            'fees': fields.float(string='Frais', required=True),
+            'fees': fields.float(string='Frais', required=False, default=0.0),
             'student_ids': fields.many2many('op.student', 'op_batch_student_rel', 'op_student_id', 'op_batch_id', string='Students'),
 
     }
@@ -43,8 +43,7 @@ class op_batch_invoiced(osv.osv):
     _columns = {
             'batch_id': fields.many2one('op.batch', string='Batch', required=True),
             'student_id': fields.many2one('op.student', string='Student', required=True),
-            'invoiced':fields.boolean(string='invoiced'),
-            'paid':fields.boolean(string='paid')
+            'invoice_id':fields.many2one('account.invoice', string='invoiced', required=False)
 
     }
 op_batch_invoiced()
