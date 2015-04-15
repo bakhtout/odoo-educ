@@ -143,9 +143,7 @@
         'views/report_ticket.xml',
         'views/student_label.xml',
         'views/report_time_table_teacher_generate.xml',
-        'views/generate_timetable_student.xml',
-        'views/openeducat_template.xml',
-        'views/homepage_template.xml',
+        'views/generate_timetable_student.xml'
 
     ],
     'demo': [
@@ -167,9 +165,6 @@
                  'demo/op.period.csv',
                  'demo/op_comapny_data.xml',
                  ],
-    'css': ['static/src/css/base.css'],
-    'qweb': [
-        'static/src/xml/base.xml'],
     'js': ['static/src/js/chrome.js'],
     'test': [
              'test/configuration.yml',

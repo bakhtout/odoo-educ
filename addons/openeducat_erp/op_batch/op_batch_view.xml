@@ -21,6 +21,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Batch" version="7.0">
+                    <header>
+						<span
+							groups="openeducat_erp.group_op_back_office_admin,openeducat_erp.group_op_back_office">
+							<button name="create_invoice" string="Créer facture pour le groupe"
+								type="object" icon="gtk-apply" attrs="{'invisible':['|', ('customer_id','=', False), ('invoice_id','>', 0)]}"/>
+						</span>
+					</header>
 					<sheet>
 						<separator colspan="4" string="Batch Details" />
 						<group colspan="4">
@@ -29,17 +36,30 @@
 							<field name="start_date" />
 							<field name="end_date" />
 							<field name="course_id" />
+                            <field string="Client" name="customer_id"
+                                context="{'search_default_customer':1, 'show_address': 1}"
+                                options='{"always_reload": True}'
+                                domain="[('customer', '=', True)]"/>
+                            <field name="invoice_id" />
                             <field name="fees" />
 						</group>
-                        <separator string="Student" colspan="4" />
-                        <field name="student_ids" colspan="4" nolabel="1">
+                        <separator string="Etudiants" colspan="4" />
+                        <field name="student_ids" colspan="4" nolabel="1" on_change="onchange_student_ids(student_ids)">
 							<tree>
-                                <field name="roll_number" />
                                 <field name="name" />
-                                <field name="middle_name" />
                                 <field name="last_name" />
-                                <field name="gender" />
                                 <field name="birth_date" />
+							</tree>
+						</field>
+                        <separator string="Etat de paiment" colspan="4" attrs="{'invisible':[('customer_id','>', 0)]}"/>
+                        <field name="batch_invoiced_ids"
+                               colspan="4" nolabel="1"
+                               widget="one2many_list"
+                               attrs="{'invisible':[('customer_id','>', 0)]}">
+							<tree>
+                                <field name="student_full_name" />
+                                <field name="invoice_due_date" />
+                                <field name="invoice_state" />
 							</tree>
 						</field>
 					</sheet>

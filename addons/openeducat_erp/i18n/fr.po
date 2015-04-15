@@ -2424,7 +2424,7 @@ msgstr "Fin"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_class_room
 msgid "Class Room Management"
-msgstr "Gestion Class Room"
+msgstr "Gestion de salles de classes"
 
 #. module: openeducat_erp
 #: field:op.period,am_pm:0
