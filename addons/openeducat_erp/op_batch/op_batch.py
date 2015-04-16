@@ -36,12 +36,13 @@ class op_batch(osv.osv):
     _name = 'op.batch'
 
     _columns = {
-        'code': fields.char(size=8, string='Code', required=True),
-        'name': fields.char(size=32, string='Name', required=True),
-        'start_date': fields.date(string='Start Date', required=True),
-        'end_date': fields.date(string='End Date', required=True),
+        'code': fields.char(size=8, string='Code', required=False),
+        'name': fields.char(size=255, string='Name', required=True),
+        'start_date': fields.date(string='Start Date', required=False),
+        'end_date': fields.date(string='End Date', required=False),
         'course_id': fields.many2one('op.course', string='Course', required=True),
         'fees': fields.float(string='Fees', required=False, default=0.0),
+        'state': fields.selection([('d','En constitution'),('r','En cours'),('done','Terminée') ,('c','Annulée')],select=True, string='State'),
         'student_ids': fields.many2many('op.student', 'op_batch_student_rel', 'op_student_id', 'op_batch_id',
                                         string='Students'),
         'batch_invoiced_ids': fields.one2many('op.batch.invoiced', 'batch_id', String='Students', readonly=True),

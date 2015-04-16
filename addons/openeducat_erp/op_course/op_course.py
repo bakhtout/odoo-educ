@@ -24,10 +24,11 @@ class op_course(osv.osv):
     _name = 'op.course'
 
     _columns = {
-            'name': fields.char(size=32, string='Name', required=True),
-            'code': fields.char(size=8, string='Code', required=True),
-            'section': fields.char(size=32, string='Section', required=True),
-            'evaluation_type': fields.selection([('normal','Normal'),('GPA','GPA'),('CWA','CWA'),('CCE','CCE')], string='Evaluation Type', required=True),
+            'name': fields.char(size=255, string='Name', required=True),
+            'code': fields.char(size=8, string='Code', required=False),
+            'coefficient' : fields.integer(string='Coefficient'),
+            'section': fields.char(size=32, string='Section', required=False),
+            'evaluation_type': fields.selection([('normal','Normal'),('GPA','GPA'),('CWA','CWA'),('CCE','CCE')], string='Evaluation Type', required=False),
             'payment_term': fields.many2one('account.payment.term', 'Payment Term'),
             'subject_ids': fields.many2many('op.subject', 'op_course_subject_rel', 'op_course_id', 'op_subject_id', string='Subject(s)'),
     }

@@ -166,6 +166,7 @@
                  'demo/op_comapny_data.xml',
                  ],
     'js': ['static/src/js/chrome.js'],
+    'qweb' : ['static/src/xml/announcement.xml'],
     'test': [
              'test/configuration.yml',
              'test/new_admission.yml',

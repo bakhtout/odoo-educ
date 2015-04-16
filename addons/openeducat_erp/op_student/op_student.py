@@ -52,16 +52,16 @@ class op_student(osv.osv):
 
     _columns = {
         #            'name': fields.char(size=128, string='First Name', required=True),
-        'middle_name': fields.char(size=128, string='Middle Name', required=True),
+        'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
-        'birth_date': fields.date(string='Birth Date', required=True),
+        'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
             [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'), ('A-', 'A-ve'), ('B-', 'B-ve'),
              ('O-', 'O-ve'), ('AB-', 'AB-ve')], string='Blood Group'),
-        'gender': fields.selection([('m', 'Male'), ('f', 'Female'), ('o', 'Other')], string='Gender', required=True),
+        'gender': fields.selection([('m', 'Male'), ('f', 'Female'), ('o', 'Other')], string='Gender', required=False),
         'nationality': fields.many2one('res.country', string='Nationality'),
         'language': fields.many2one('res.lang', string='Mother Tongue'),
-        'category': fields.many2one('op.category', string='Category', required=True),
+        'category': fields.many2one('op.category', string='Category', required=False),
         'religion': fields.many2one('op.religion', string='Religion'),
         'library_card': fields.char(size=64, string='Library Card'),
         'emergency_contact': fields.many2one('res.partner', string='Emergency Contact'),
