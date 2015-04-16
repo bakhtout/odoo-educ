@@ -96,7 +96,7 @@ class op_batch(osv.osv):
             invoice_id = invoice_pool.create(cr, uid, invoice_default, context=context)
             invoice_line_pool = self.pool.get('account.invoice.line')
             tax_id = \
-                self.pool.get('account.tax').search(cr, uid, [('type_tax_use', '=', 'sale'), ('sequence', '=', 1)])[
+                self.pool.get('account.tax').search(cr, uid, [('type_tax_use', '=', 'sale'), ('sequence', '=', 2)])[
                     0]
             inv_line = {
                 'price_unit': batch.fees * len(batch.student_ids),

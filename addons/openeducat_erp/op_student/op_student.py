@@ -133,7 +133,7 @@ class op_student(osv.osv):
                 inv_batch_pool.write(cr, uid, inv_batch_id, {'invoice_id': invoice_id}, context=context)
                 invoice_line_pool = self.pool.get('account.invoice.line')
                 tax_id = \
-                    self.pool.get('account.tax').search(cr, uid, [('type_tax_use', '=', 'sale'), ('sequence', '=', 1)])[
+                    self.pool.get('account.tax').search(cr, uid, [('type_tax_use', '=', 'sale'), ('sequence', '=', 2)])[
                         0]
                 inv_line = {
                     'price_unit': inv_batch.batch_id.fees,
