@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="WebClient.announcement_bar" t-operation="replace">
-         <div class="openerp" id="announcement_bar_table">
-            <table class="oe_webclient">
-                <tr>
-                    <td colspan="2" class="announcement_bar">
-                           Cette instance Odoo est fourni par Novisoft
-                        <span class="close"></span>
-                    </td>
-                </tr>
-            </table>
-        </div>
+
     </t>
 </templates>
