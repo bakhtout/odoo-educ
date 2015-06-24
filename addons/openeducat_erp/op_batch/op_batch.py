@@ -55,24 +55,25 @@ class op_batch(osv.osv):
     def onchange_student_ids(self, cr, uid, ids, student_ids, context=None):
         inv_batch_pool = self.pool.get('op.batch.invoiced')
         resolved_students = self.resolve_2many_commands(cr, uid, 'student_ids', student_ids, ['student_id'], context)
-        # args = [('batch_id', '=', ids[0])]
-        # inv_batches = inv_batch_pool.search(cr, uid,args, context=context)
-        # for inv_batch_id in inv_batches:
-        #     inv_batch =  inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
-        #     if inv_batch.invoice_id.id is False:
-        #        inv_batch_pool.unlink(cr, uid, inv_batch_id, context=context)
 
-        for student_id in resolved_students:
-            args = [('student_id', '=', student_id['id']), ('batch_id', '=', ids[0])]
-            inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
-            if (inv_batch is None or len(inv_batch) == 0):
-                inv_batch_data = {
-                    'student_id': student_id['id'],
-                    'batch_id': ids[0]
-                }
 
-                inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
-
+        if (ids is not None and len(ids) > 0):
+            args = [('batch_id', '=', ids[0])]
+            inv_batches = inv_batch_pool.search(cr, uid,args, context=context)
+            for inv_batch_id in inv_batches:
+                inv_batch =  inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
+                if inv_batch.invoice_id.id is False:
+                    cr.execute("DELETE FROM op_batch_invoiced where id = %s",  (inv_batch_id,))
+            for student_id in resolved_students:
+                _logger.info(" adding student is %s", student_id['id'])
+                args = [('student_id', '=', student_id['id']), ('batch_id', '=', ids[0])]
+                inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
+                if (inv_batch is None or len(inv_batch) == 0):
+                    inv_batch_data = {
+                        'student_id': student_id['id'],
+                        'batch_id': ids[0]
+                    }
+                    inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
 
     def create_invoice(self, cr, uid, ids, context={}):
         invoice_pool = self.pool.get('account.invoice')
