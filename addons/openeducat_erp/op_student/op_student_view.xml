@@ -97,8 +97,10 @@
 							<h1><table>
 								<tr>
 								<td><field name="name" placeholder="First Name" style="padding-right:10px" /></td>
-								<td><field name="middle_name" placeholder="Middle Name" style="padding-right:10px" /></td>
 								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px" /></td>
+								</tr>
+                                <tr>
+								<td colspan="2"><field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/></td>
 								</tr>
 								</table>
 							</h1>
@@ -109,25 +111,13 @@
 							<field name="birth_date" />
 							<!-- <field name="id_number" /> -->
 							<field name="roll_number" />
-							<field name="alumni_boolean" />
+						</group>
+                        <separator colspan="4" string="Batch" />
+						<group col="6" colspan="4">
+                            <field name="batch_ids" colspan="4" nolabel="1"  />
 						</group>
 						<notebook colspan="4">
-							<page string="Details">
-								<separator colspan="4" string="Personal Detail" />
-								<group col="4" colspan="4">
-									<field name="category" />
-									<field name="religion" />
-									<field name="nationality" />
-									<field name="language" />
-									<field name="blood_group" />
-									<field name="pan_card" />
-									<field name="bank_acc_num" />
-									<field name="visa_info" />
-									<field name="user_id" />
-									<field name="emergency_contact" context="{'show_address': 1}"
-										options='{"always_reload": True}' />
-								</group>
-								<separator colspan="4" string="Address Detail" />
+							<page string="Address Detail">
 								<group>
 									<label for="type" />
 									<div name="div_type">
@@ -148,57 +138,9 @@
 									</div>
 								</group>
 							</page>
-							<page string="Educational">
-                                <separator string="Batch" colspan="4" />
-                                <field name="batch_ids" colspan="4" nolabel="1" />
-							</page>
-							<page string="Assignments">
-								<separator string="Assignment" colspan="4" />
-								<field name="allocation_ids" colspan="4" nolabel="1">
-									<tree string="Assignment">
-										<field name="name" />
-										<field name="batch_id" />
-										<field name="subject_id" />
-										<field name="faculty_id" />
-										<field name="reviewer" />
-										<field name="marks" />
-										<field name="type" />
-										<field name="state" />
-										<field name="issued_date" />
-										<field name="submission_date" />
-									</tree>
-								</field>
-							</page>
 							<page string="Library">
 								<separator string="Library Detail" colspan="4" />
 								<field name="library_card_ids" colspan="4" nolabel="1" />
-							</page>
-							<page string="Alumni Details">
-								<group colspan="4" col="4"
-									attrs="{'invisible':[('alumni_boolean','=',False)]}">
-									<separator string="Alumni Detail" colspan="4" />
-									<field name="passing_year" />
-									<field name="current_position" />
-									<field name="current_job" />
-									<field name="email" />
-									<field name="phone" string="Phone" />
-								</group>
-							</page>
-							<page string="Placement Offer">
-								<separator string="Placement Offer" colspan="4" />
-								<field name="placement_line" colspan="4" nolabel="1" />
-							</page>
-							<page string="Activity Log">
-								<separator string="Activity Log" colspan="4" />
-								<field name="activity_log" colspan="4" nolabel="1" />
-							</page>
-							<page string="Parent">
-								<separator string="Parent" colspan="4" />
-								<field name="parent_ids" colspan="4" nolabel="1" />
-							</page>
-							<page string="Health Detail">
-								<separator string="Health Detail" colspan="4" />
-								<field name="health_lines" colspan="4" nolabel="1" />
 							</page>
 						</notebook>
 					</sheet>

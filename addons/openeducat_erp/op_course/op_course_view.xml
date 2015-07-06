@@ -9,11 +9,9 @@
 				<tree string="Course">
 					<field name="name" />
 					<field name="code" />
+					<field name="course_type" />
 					<field name="coefficient" />
-					<field name="section" />
-					<field name="evaluation_type" />
-					<field name="payment_term" />
-					<field name="subject_ids" />
+					<field name="parent_course" />
 				</tree>
 			</field>
 		</record>
@@ -28,15 +26,9 @@
 						<group colspan="4">
 							<field name="name" />
 							<field name="code" />
+                            <field name="course_type" />
 							<field name="coefficient" />
- 							<field name="section" />
-							<field name="evaluation_type" />
-						</group>
-						<group colspan="4">
-							<field name="payment_term" />
-						</group>
-						<group string="Subjects">
-							<field name="subject_ids" nolabel="1"/>
+							<field name="parent_course" />
 						</group>
 					</sheet>
 				</form>

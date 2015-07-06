@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-import time
+import time, re
 
 from openerp.osv import osv, fields
 from openerp.tools.translate import _
@@ -49,11 +49,17 @@ class op_student(osv.osv):
             result[line.student_id.id] = True
         return result.keys()
 
+    def  ValidateEmail(self, cr, uid, ids, email, context=None):
+        if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", email) != None:
+            return True
+        else:
+            raise osv.except_osv('Email Invalide', 'Veuillez entrer un compte email valide!')
 
     _columns = {
         #            'name': fields.char(size=128, string='First Name', required=True),
         'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
+        'email': fields.char(size=256, string='Last Name', required=False),
         'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
             [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'), ('A-', 'A-ve'), ('B-', 'B-ve'),
@@ -102,96 +108,9 @@ class op_student(osv.osv):
     }
 
 
-    def createInvoicedBatches(self, cr, uid, inv_batch_pool, student, context):
 
-        for batch in student.batch_ids:
 
-            args = [('student_id', '=', student.id), ('batch_id', '=', batch.id)]
-            inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
-            if (inv_batch is None or len(inv_batch) == 0):
-                inv_batch_data = {
-                    'student_id': student.id,
-                    'batch_id': batch.id
-                }
 
-                inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
-
-    def updateInvoiceDueDate(self, cr, uid, due_date, invoice_id, invoice_pool, context):
-        due_date = parse(due_date) - timedelta(days=15)
-        invoice_pool.write(cr, uid, invoice_id, {'date_due': due_date.strftime(tools.DEFAULT_SERVER_DATE_FORMAT)},
-                           context=context)
-
-    def createInvoiceLinesFromBatches(self, cr, uid, inv_batch_pool, invoice_id, invoice_pool, student, context):
-        inv_batches = inv_batch_pool.search(cr, uid, [('student_id', '=', student.id), ('invoice_id', '=', False)],
-                                            context=context)
-        if (inv_batches is not None and len(inv_batches)):
-            due_date = None
-            for inv_batch_id in inv_batches:
-                inv_batch = inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
-                if (due_date is None or due_date < inv_batch.batch_id.start_date):
-                    due_date = inv_batch.batch_id.start_date
-                inv_batch_pool.write(cr, uid, inv_batch_id, {'invoice_id': invoice_id}, context=context)
-                invoice_line_pool = self.pool.get('account.invoice.line')
-                tax_id = \
-                    self.pool.get('account.tax').search(cr, uid, [('type_tax_use', '=', 'sale'), ('sequence', '=', 2)])[
-                        0]
-                inv_line = {
-                    'price_unit': inv_batch.batch_id.fees,
-                    'quantity': 1,
-                    'name': 'Session ' + inv_batch.batch_id.name,
-                    'partner_id': student.partner_id.id,
-                    'account_id': self.pool.get('ir.property').get(cr, uid, 'property_account_income_categ',
-                                                                   'product.category', context=context).id,
-                    'invoice_id': invoice_id,
-                    'invoice_line_tax_id': [(6, 0, [tax_id])]
-                }
-                invoice_line_pool.create(cr, uid, inv_line, context=context)
-        self.updateInvoiceDueDate(cr, uid, due_date, invoice_id, invoice_pool, context)
-
-    def create_invoice(self, cr, uid, ids, context={}):
-        """ Create invoice for fee payment process of student """
-
-        invoice_pool = self.pool.get('account.invoice')
-
-        default_fields = invoice_pool.fields_get(cr, uid, context=context)
-        invoice_default = invoice_pool.default_get(cr, uid, default_fields, context=context)
-
-        for student in self.browse(cr, uid, ids, context=context):
-
-            inv_batch_pool = self.pool.get('op.batch.invoiced')
-            self.createInvoicedBatches(cr, uid, inv_batch_pool, student, context)
-
-            onchange_partner = invoice_pool.onchange_partner_id(cr, uid, [], type='out_invoice', \
-                                                                partner_id=student.partner_id.id)
-            invoice_default.update(onchange_partner['value'])
-
-            invoice_data = {
-                'partner_id': student.partner_id.id,
-                'date_invoice': time.strftime('%Y-%m-%d'),
-                'type': 'out_invoice'
-            }
-
-        invoice_default.update(invoice_data)
-        invoice_id = invoice_pool.create(cr, uid, invoice_default, context=context)
-
-        self.createInvoiceLinesFromBatches(cr, uid, inv_batch_pool, invoice_id, invoice_pool, student, context)
-        models_data = self.pool.get('ir.model.data')
-        form_view = models_data.get_object_reference(cr, uid, 'account', 'invoice_form')
-        tree_view = models_data.get_object_reference(cr, uid, 'account', 'invoice_tree')
-        value = {
-            'domain': str([('id', '=', invoice_id)]),
-            'view_type': 'form',
-            'view_mode': 'form',
-            'res_model': 'account.invoice',
-            'view_id': False,
-            'views': [(form_view and form_view[1] or False, 'form'),
-                      (tree_view and tree_view[1] or False, 'tree')],
-            'type': 'ir.actions.act_window',
-            'res_id': invoice_id,
-            'target': 'current',
-            'nodestroy': True
-        }
-        return value
 
 
 op_student()

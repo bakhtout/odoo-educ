@@ -10,6 +10,7 @@
 					<field name="code" />
 					<field name="name" />
 					<field name="state" />
+					<field name="payment_type" />
 					<field name="start_date" />
 					<field name="end_date" />
 					<field name="course_id" />
@@ -35,6 +36,7 @@
 							<field name="code" />
 							<field name="name" />
 							<field name="state" />
+                            <field name="payment_type" />
 							<field name="start_date" />
 							<field name="end_date" />
 							<field name="course_id" />
@@ -46,7 +48,7 @@
                             <field name="fees" />
 						</group>
                         <separator string="Etudiants" colspan="4" />
-                        <field name="student_ids" colspan="4" nolabel="1" on_change="onchange_student_ids(student_ids)">
+                        <field name="student_ids" colspan="4" nolabel="1">
 							<tree>
                                 <field name="name" />
                                 <field name="last_name" />
@@ -54,19 +56,30 @@
 							</tree>
 						</field>
                         <separator string="Etat de paiment" colspan="4" attrs="{'invisible':[('customer_id','>', 0)]}"/>
-                        <field name="batch_invoiced_ids"
-                               colspan="4" nolabel="1"
-                               widget="one2many_list"
-                               attrs="{'invisible':[('customer_id','>', 0)]}">
-							<tree>
-                                <field name="student_full_name" />
-                                <field name="invoice_due_date" />
-                                <field name="invoice_state" />
-							</tree>
-						</field>
+                            <button string="Paiements 1er trimestre" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 2ème trimestre" type="object" name="view_payment_2" attrs="{'invisible':[ ('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 3ème trimestre" type="object" name="view_payment_3" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 1er semestre" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
+                            <button string="Paiements 2ème semestre" type="object" name="view_payment_2" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
+                            <button string="Paiements" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'Y')]}"/>
 					</sheet>
 				</form>
 			</field>
+		</record>
+		<record id="view_op_batch_invoiced_tree" model="ir.ui.view">
+			<field name="name">op.batch.invoiced.tree</field>
+			<field name="model">op.batch.invoiced</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+                <tree string="Paiments">
+                    <field name="student_full_name" />
+                    <field name="invoice_due_date" />
+                    <field name="invoice_state" />
+                    <field name="invoice_residual" />
+                    <button string="Créer facture" type="object" name="create_invoice" attrs="{'invisible':[('invoice_due_date','!=', False)]}"/>
+                    <button string="Voir facture" type="object" name="view_invoice" attrs="{'invisible':[('invoice_due_date','=', False)]}"/>
+				</tree>
+            </field>
 		</record>
 		<record id="view_op_batch_search" model="ir.ui.view">
 			<field name="name">op.batch.search</field>
@@ -111,7 +124,27 @@
 			<field name="view_mode">tree</field>
 			<field name="view_id" ref="view_op_batch_tree" />
 		</record>
+        <record model="ir.actions.act_window" id="act_open_op_batch_invoiced_view">
+			<field name="name">Batch_Invoiced</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">op.batch.invoiced</field>
+			<field name="view_type">tree</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+        <record model="ir.actions.act_window.view" id="act_open_op_batch_invoiced_view_tree">
+			<field name="act_window_id" ref="act_open_op_batch_invoiced_view" />
+			<field name="sequence" eval="30" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_op_batch_invoiced_tree" />
+		</record>
 
+        <act_window id="action_op_batch_invoiced_remind"
+            multi="True"
+            key2="client_action_multi" name="Rappeler les retards de paiements "
+            res_model="op.batch.invoiced" src_model="op.batch.invoiced"
+            view_mode="form" target="new" view_type="form" />
 
 	</data>
 </openerp>

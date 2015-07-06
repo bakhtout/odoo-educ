@@ -3745,3 +3745,7 @@ msgstr "Année"
 #: report:student.bonafide.certificate:0
 msgid "PRINCIPAL"
 msgstr "PRINCIPALE"
+
+
+msgid "School management"
+msgstr "Scolarité"

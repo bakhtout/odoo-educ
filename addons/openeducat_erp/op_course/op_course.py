@@ -27,6 +27,8 @@ class op_course(osv.osv):
             'name': fields.char(size=255, string='Name', required=True),
             'code': fields.char(size=8, string='Code', required=False),
             'coefficient' : fields.integer(string='Coefficient'),
+            'course_type': fields.selection([('S', 'Standard'), ('PM', 'Aprés midi'), ('EV', 'Soirée')], string='Course type'),
+            'parent_course' : fields.many2one('op.course', 'Parent course'),
             'section': fields.char(size=32, string='Section', required=False),
             'evaluation_type': fields.selection([('normal','Normal'),('GPA','GPA'),('CWA','CWA'),('CCE','CCE')], string='Evaluation Type', required=False),
             'payment_term': fields.many2one('account.payment.term', 'Payment Term'),
