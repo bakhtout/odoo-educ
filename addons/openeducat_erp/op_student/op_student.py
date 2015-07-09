@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
+import string
 import time, re
 
 from openerp.osv import osv, fields
@@ -50,21 +51,22 @@ class op_student(osv.osv):
         return result.keys()
 
     def  ValidateEmail(self, cr, uid, ids, email, context=None):
-        if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", email) != None:
-            return True
-        else:
-            raise osv.except_osv('Email Invalide', 'Veuillez entrer un compte email valide!')
+        if email is not None and isinstance(email, basestring) :
+            if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", email) != None:
+                return True
+            else:
+                raise osv.except_osv('Email Invalide', 'Veuillez entrer un compte email valide!')
 
     _columns = {
         #            'name': fields.char(size=128, string='First Name', required=True),
         'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
-        'email': fields.char(size=256, string='Last Name', required=False),
+        'email': fields.char(size=256, string='Last Name', required=True),
         'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
             [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'), ('A-', 'A-ve'), ('B-', 'B-ve'),
              ('O-', 'O-ve'), ('AB-', 'AB-ve')], string='Blood Group'),
-        'gender': fields.selection([('m', 'Male'), ('f', 'Female'), ('o', 'Other')], string='Gender', required=False),
+        'gender': fields.selection([('m', 'Male'), ('f', 'Female'), ('o', 'Other')], string='Gender', required=True),
         'nationality': fields.many2one('res.country', string='Nationality'),
         'language': fields.many2one('res.lang', string='Mother Tongue'),
         'category': fields.many2one('op.category', string='Category', required=False),
@@ -96,7 +98,6 @@ class op_student(osv.osv):
         'passing_year': fields.many2one('op.batch', string='Passing Year'),
         'current_position': fields.char(string='Current Position', size=256),
         'current_job': fields.char(string='Current Job', size=256),
-        'email': fields.char(string='Email', size=128),
         'phone': fields.char(string='Phone Number', size=256),
         'user_id': fields.many2one('res.users', 'User'),
         'placement_line': fields.one2many('op.placement.offer', 'student_id', 'Placement Details'),

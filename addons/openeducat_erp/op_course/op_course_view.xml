@@ -10,7 +10,7 @@
 					<field name="name" />
 					<field name="code" />
 					<field name="course_type" />
-					<field name="coefficient" />
+					<field name="category" />
 					<field name="parent_course" />
 				</tree>
 			</field>
@@ -27,7 +27,7 @@
 							<field name="name" />
 							<field name="code" />
                             <field name="course_type" />
-							<field name="coefficient" />
+							<field name="category" />
 							<field name="parent_course" />
 						</group>
 					</sheet>

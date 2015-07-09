@@ -38,14 +38,14 @@ class op_batch(osv.osv):
     _columns = {
         'code': fields.char(size=8, string='Code', required=False),
         'name': fields.char(size=255, string='Name', required=True),
-        'start_date': fields.date(string='Start Date', required=False),
-        'end_date': fields.date(string='End Date', required=False),
+        'start_date': fields.date(string='Start Date', required=True),
+        'end_date': fields.date(string='End Date', required=True),
         'course_id': fields.many2one('op.course', string='Course', required=True),
-        'fees': fields.float(string='Prix HT', required=False, default=0.0),
+        'fees': fields.float(string='Prix HT', required=True, default=0.0),
         'state': fields.selection([('d', 'En constitution'), ('r', 'En cours'), ('done', 'Terminée'), ('c', 'Annulée')],
                                   select=True, string='State'),
         'payment_type': fields.selection([('Q', 'Trimestrielle'), ('H', 'Semestrielle'), ('Y', 'Annuelle')],
-                                         string='Mode de paiments'),
+                                         string='Mode de paiments', required=True),
         'student_ids': fields.many2many('op.student', 'op_batch_student_rel', 'op_student_id', 'op_batch_id',
                                         string='Students'),
         'batch_invoiced_ids': fields.one2many('op.batch.invoiced', 'batch_id', String='Students', readonly=True),
@@ -158,7 +158,7 @@ class op_batch(osv.osv):
     def retrieve_payments(self, ids, phase):
         value = {
             'domain': str([('batch_id', '=', ids[0]), ('payment_phase', '=', phase)]),
-            'name': 'Etat des paiements',
+            'name': 'Etat des paiements ' + str(phase),
             'view_type': 'form',
             'view_mode': 'tree,form',
             'res_model': 'op.batch.invoiced',
@@ -200,10 +200,13 @@ class op_batch_invoiced(osv.osv):
     @api.depends('invoice_id.residual')
     def _get_invoice_residual(self):
         for record in self:
-            if record.invoice_id.state not in ('draft', 'cancel'):
-                record.invoice_residual = record.invoice_id.residual
+            if record.invoice_id.id > 0:
+                if record.invoice_id.state not in ('draft', 'cancel'):
+                    record.invoice_residual = record.invoice_id.residual
+                else:
+                    record.invoice_residual = record.batch_id.fees * 1.07
             else:
-                record.invoice_residual = record.batch_id.fees
+                record.invoice_residual = record.batch_id.fees * 1.07
 
     @api.depends('invoice_id.state')
     def _get_invoice_state(self):
