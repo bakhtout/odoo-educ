@@ -140,11 +140,5 @@
 			<field name="view_id" ref="view_op_batch_invoiced_tree" />
 		</record>
 
-        <act_window id="action_op_batch_invoiced_remind"
-            multi="True"
-            key2="client_action_multi" name="Rappeler les retards de paiements "
-            res_model="op.batch.invoiced" src_model="op.batch.invoiced"
-            view_mode="form" target="new" view_type="form" />
-
 	</data>
 </openerp>

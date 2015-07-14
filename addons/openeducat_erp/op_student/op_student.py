@@ -61,7 +61,7 @@ class op_student(osv.osv):
         #            'name': fields.char(size=128, string='First Name', required=True),
         'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
-        'email': fields.char(size=256, string='Last Name', required=True),
+        'email': fields.char(size=256, string='Email', required=True),
         'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
             [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'), ('A-', 'A-ve'), ('B-', 'B-ve'),

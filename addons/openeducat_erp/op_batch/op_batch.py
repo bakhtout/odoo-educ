@@ -5,7 +5,7 @@
 # Copyright (C) 2004-TODAY Tech-Receptives(<http://www.tech-receptives.com>).
 #
 # This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
+# it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
@@ -96,7 +96,7 @@ class op_batch(osv.osv):
                     inv_batch_data = {
                         'student_id': student_id['id'],
                         'batch_id': ids[0],
-                        'payment_phase' : phase
+                        'payment_phase': phase
                     }
                     inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
 
@@ -178,8 +178,6 @@ class op_batch(osv.osv):
         return self.retrieve_payments(ids, 3)
 
 
-
-
 op_batch()
 
 
@@ -190,7 +188,8 @@ class op_batch_invoiced(osv.osv):
     @api.depends('student_id.name', 'student_id.last_name')
     def _get_student_full_name(self):
         for record in self:
-            record.student_full_name = record.student_id.name + ' ' + record.student_id.last_name
+            if (record.student_id.id > 0):
+                record.student_full_name = record.student_id.name + ' ' + record.student_id.last_name
 
     @api.depends('invoice_id.date_due')
     def _get_invoice_due_date(self):
