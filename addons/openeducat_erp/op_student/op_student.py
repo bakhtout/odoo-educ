@@ -20,12 +20,15 @@
 #/#############################################################################
 import string
 import time, re
+import logging
 
 from openerp.osv import osv, fields
 from openerp.tools.translate import _
 from datetime import timedelta
 import openerp.tools as tools
 from dateutil.parser import parse
+
+_logger = logging.getLogger(__name__)
 
 class op_student(osv.osv):
     _name = 'op.student'
@@ -57,10 +60,29 @@ class op_student(osv.osv):
             else:
                 raise osv.except_osv('Email Invalide', 'Veuillez entrer un compte email valide!')
 
+    def write(self, cr, uid, ids, vals, context=None):
+        _logger.info("student value is %s", vals)
+        batch_pool = self.pool.get('op.batch')
+        for student in self.browse(cr, uid, ids, context=context):
+            vals['name'] = student.first_name + " " + student.last_name
+            batch_ids = student.batch_ids
+            for batch_id in batch_ids:
+                batch = batch_pool.browse(cr, uid, batch_id, context=context)[0]
+                batch.create_invoiced_batches(cr, uid, batch_id, ids, 1, context=context)
+
+        res = super(op_student, self).write(cr, uid, ids, vals, context=context)
+        return res
+
+    def create(self, cr, uid, vals, context=None):
+        _logger.info("student value is %s", vals)
+        vals['name'] = vals['first_name'] + " " + vals['last_name']
+        res = super(op_student, self).create(cr, uid, vals, context=context)
+        return res
+
     _columns = {
-        #            'name': fields.char(size=128, string='First Name', required=True),
         'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
+        'first_name': fields.char(size=128, string='First Name', required=True),
         'email': fields.char(size=256, string='Email', required=True),
         'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
@@ -107,7 +129,6 @@ class op_student(osv.osv):
         'gr_no': fields.char(string="GR Number", size=20),
         'batch_invoiced_ids': fields.one2many('op.batch.invoiced', 'student_id', 'Invoiced batches'),
     }
-
 
 
 

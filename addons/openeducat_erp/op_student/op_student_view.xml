@@ -89,8 +89,8 @@
 							</h1>
 							<h1><table>
 								<tr>
-								<td><field name="name" placeholder="First Name" style="padding-right:10px" /></td>
-								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px" /></td>
+								<td><field name="first_name" placeholder="First Name" style="padding-right:10px"/></td>
+								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px"/></td>
 								</tr>
                                 <tr>
 								<td colspan="2"><field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/></td>

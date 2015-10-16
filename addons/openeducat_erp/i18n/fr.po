@@ -1386,7 +1386,7 @@ msgstr "Recommandation"
 #: selection:op.admission,gender:0 selection:op.faculty,gender:0
 #: selection:op.student,gender:0
 msgid "Male"
-msgstr "Mâle"
+msgstr "Masculin"
 
 #. module: openeducat_erp
 #: view:op.timetable:0
