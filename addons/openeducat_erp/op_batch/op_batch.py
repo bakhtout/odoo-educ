@@ -44,7 +44,7 @@ class op_batch(osv.osv):
         'fees': fields.float(string='Prix TTC', required=True, default=0.0),
         'state': fields.selection([('d', 'En constitution'), ('r', 'En cours'), ('done', 'Terminée'), ('c', 'Annulée')],
                                   select=True, string='State'),
-        'payment_type': fields.selection([('Q', '3 fois'), ('H', '2 foiq'), ('Y', '1 fois')],
+        'payment_type': fields.selection([('Q', 'en 3 fois'), ('H', 'en 2 fois'), ('Y', 'en 1 fois')],
                                          string='Mode de paiments', required=True),
         'student_ids': fields.many2many('op.student', 'op_batch_student_rel', 'op_student_id', 'op_batch_id',
                                         string='Students'),
