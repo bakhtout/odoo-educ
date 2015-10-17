@@ -50,7 +50,7 @@
                         <separator string="Etudiants" colspan="4" />
                         <field name="student_ids" colspan="4" nolabel="1">
 							<tree>
-                                <field name="name" />
+                                <field name="first_name" />
                                 <field name="last_name" />
                                 <field name="birth_date" />
 							</tree>

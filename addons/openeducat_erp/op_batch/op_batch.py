@@ -185,11 +185,11 @@ class op_batch_invoiced(osv.osv):
     _name = 'op.batch.invoiced'
     _order = 'invoice_state'
 
-    @api.depends('student_id.name', 'student_id.last_name')
+    @api.depends('student_id.first_name', 'student_id.last_name')
     def _get_student_full_name(self):
         for record in self:
             if (record.student_id.id > 0):
-                record.student_full_name = record.student_id.name + ' ' + record.student_id.last_name
+                record.student_full_name = record.student_id.first_name + ' ' + record.student_id.last_name
 
     @api.depends('invoice_id.date_due')
     def _get_invoice_due_date(self):

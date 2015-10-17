@@ -62,13 +62,22 @@ class op_student(osv.osv):
 
     def write(self, cr, uid, ids, vals, context=None):
         _logger.info("student value is %s", vals)
-        batch_pool = self.pool.get('op.batch')
+        inv_batch_pool = self.pool.get('op.batch.invoiced')
         for student in self.browse(cr, uid, ids, context=context):
             vals['name'] = student.first_name + " " + student.last_name
-            batch_ids = student.batch_ids
-            for batch_id in batch_ids:
-                batch = batch_pool.browse(cr, uid, batch_id, context=context)[0]
-                batch.create_invoiced_batches(cr, uid, batch_id, ids, 1, context=context)
+            batch_ids = vals['batch_ids'][0][2]
+            _logger.info("batch ids are %s", batch_ids)
+            if len(batch_ids) > 0 and isinstance(batch_ids[0], int):
+                for batch_id in batch_ids:
+                    args = [('student_id', '=', ids[0]), ('batch_id', '=', batch_id), ('payment_phase', '=', 1)]
+                    inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
+                    if (inv_batch is None or len(inv_batch) == 0):
+                        inv_batch_data = {
+                            'student_id': ids[0],
+                            'batch_id': batch_id,
+                            'payment_phase': 1
+                        }
+                        inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
 
         res = super(op_student, self).write(cr, uid, ids, vals, context=context)
         return res
