@@ -56,11 +56,11 @@
 							</tree>
 						</field>
                         <separator string="Etat de paiment" colspan="4" attrs="{'invisible':[('customer_id','>', 0)]}"/>
-                            <button string="Paiements 1er trimestre" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
-                            <button string="Paiements 2ème trimestre" type="object" name="view_payment_2" attrs="{'invisible':[ ('payment_type', '!=', 'Q')]}"/>
-                            <button string="Paiements 3ème trimestre" type="object" name="view_payment_3" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
-                            <button string="Paiements 1er semestre" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
-                            <button string="Paiements 2ème semestre" type="object" name="view_payment_2" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
+                            <button string="Paiements 1ère tranche" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 2ème tranche" type="object" name="view_payment_2" attrs="{'invisible':[ ('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 3ème tranche" type="object" name="view_payment_3" attrs="{'invisible':[('payment_type', '!=', 'Q')]}"/>
+                            <button string="Paiements 1ère tranche" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
+                            <button string="Paiements 2ème tranche" type="object" name="view_payment_2" attrs="{'invisible':[('payment_type', '!=', 'H')]}"/>
                             <button string="Paiements" type="object" name="view_payment_1" attrs="{'invisible':[('payment_type', '!=', 'Y')]}"/>
 					</sheet>
 				</form>
