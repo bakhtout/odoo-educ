@@ -86,7 +86,7 @@ class op_batch(osv.osv):
             inv_batches = inv_batch_pool.search(cr, uid, args, context=context)
             for inv_batch_id in inv_batches:
                 inv_batch = inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
-                if inv_batch.invoice_id.id is False:
+                if inv_batch.invoice_id.id is False and inv_batch.payment_out_invoice == 0:
                     cr.execute("DELETE FROM op_batch_invoiced where id = %s", (inv_batch_id,))
             for student_id in resolved_students:
                 _logger.info(" adding student is %s", student_id['id'])
@@ -196,16 +196,16 @@ class op_batch_invoiced(osv.osv):
         for record in self:
             record.invoice_due_date = record.invoice_id.date_due
 
-    @api.depends('invoice_id.residual')
+    @api.depends('invoice_id.residual', 'payment_out_invoice')
     def _get_invoice_residual(self):
         for record in self:
             if record.invoice_id.id > 0:
                 if record.invoice_id.state not in ('draft', 'cancel'):
                     record.invoice_residual = record.invoice_id.residual
                 else:
-                    record.invoice_residual = record.batch_id.fees * 1.07
+                    record.invoice_residual = record.batch_id.fees
             else:
-                record.invoice_residual = record.batch_id.fees * 1.07
+                record.invoice_residual = record.batch_id.fees - record.payment_out_invoice
 
     @api.depends('invoice_id.state')
     def _get_invoice_state(self):
@@ -229,7 +229,8 @@ class op_batch_invoiced(osv.osv):
                                          size=100),
         'invoice_due_date': fields.date(compute='_get_invoice_due_date', string='Date d\'échéance'),
         'invoice_state': fields.char(compute='_get_invoice_state', string='Etat de paiment', size=20),
-        'invoice_residual': fields.float(compute='_get_invoice_residual', string='Solde  à payer')
+        'invoice_residual': fields.float(compute='_get_invoice_residual', string='Solde  à payer'),
+        'payment_out_invoice' : fields.float(string='Paiement hors facture')
 
     }
 

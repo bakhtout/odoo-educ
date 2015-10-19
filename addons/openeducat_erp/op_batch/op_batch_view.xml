@@ -76,6 +76,7 @@
                     <field name="invoice_due_date" />
                     <field name="invoice_state" />
                     <field name="invoice_residual" />
+					<field name="payment_out_invoice" />
                     <button string="Créer facture" type="object" name="create_invoice" attrs="{'invisible':[('invoice_due_date','!=', False)]}"/>
                     <button string="Voir facture" type="object" name="view_invoice" attrs="{'invisible':[('invoice_due_date','=', False)]}"/>
 				</tree>
