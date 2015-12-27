@@ -65,19 +65,28 @@ class op_student(osv.osv):
         inv_batch_pool = self.pool.get('op.batch.invoiced')
         for student in self.browse(cr, uid, ids, context=context):
             vals['name'] = student.first_name + " " + student.last_name
-            batch_ids = vals['batch_ids'][0][2]
-            _logger.info("batch ids are %s", batch_ids)
-            if len(batch_ids) > 0 and isinstance(batch_ids[0], int):
-                for batch_id in batch_ids:
-                    args = [('student_id', '=', ids[0]), ('batch_id', '=', batch_id), ('payment_phase', '=', 1)]
-                    inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
-                    if (inv_batch is None or len(inv_batch) == 0):
-                        inv_batch_data = {
-                            'student_id': ids[0],
-                            'batch_id': batch_id,
-                            'payment_phase': 1
-                        }
-                        inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
+            if 'batch_ids' in vals:
+                batch_ids = vals['batch_ids'][0][2]
+                args = [('student_id', '=', ids[0])]
+                inv_batches = inv_batch_pool.search(cr, uid, args, context=context)
+                for inv_batch_id in inv_batches:
+                    inv_batch = inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
+                    if inv_batch.batch_id.id not in batch_ids:
+                        cr.execute("DELETE FROM op_batch_invoiced where id = %s", (inv_batch_id,))
+                _logger.info("batch ids are %s", batch_ids)
+                if len(batch_ids) > 0 and isinstance(batch_ids[0], int):
+                    for batch_id in batch_ids:
+                        for index in range(1, 3):
+                            args = [('student_id', '=', ids[0]), ('batch_id', '=', batch_id), ('payment_phase', '=', index)]
+                            inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
+                            if (inv_batch is None or len(inv_batch) == 0):
+                                inv_batch_data = {
+                                    'student_id': ids[0],
+                                    'batch_id': batch_id,
+                                    'payment_phase': index
+                                }
+                                inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
+
 
         res = super(op_student, self).write(cr, uid, ids, vals, context=context)
         return res
@@ -91,8 +100,9 @@ class op_student(osv.osv):
     _columns = {
         'middle_name': fields.char(size=128, string='Middle Name', required=False),
         'last_name': fields.char(size=128, string='Last Name', required=True),
+        'maiden_name': fields.char(size=128, string='Nom de jeune fille', required=False),
         'first_name': fields.char(size=128, string='First Name', required=True),
-        'email': fields.char(size=256, string='Email', required=True),
+        'email': fields.char(size=256, string='Email', required=False),
         'birth_date': fields.date(string='Birth Date', required=False),
         'blood_group': fields.selection(
             [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'), ('A-', 'A-ve'), ('B-', 'B-ve'),

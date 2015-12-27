@@ -89,11 +89,15 @@
 							</h1>
 							<h1><table>
 								<tr>
-								<td><field name="first_name" placeholder="First Name" style="padding-right:10px"/></td>
-								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px"/></td>
+									<td><field name="first_name" placeholder="Prénom" style="padding-right:10px"/></td>
+									<td><field name="maiden_name" placeholder="Nom de jeune fille" style="padding-right:10px"/></td>
+									<td><field name="last_name" placeholder="Nom" style="padding-right:10px"/></td>
 								</tr>
                                 <tr>
-								<td colspan="2"><field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/></td>
+								<td colspan="2">
+									<field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/>
+									<field name="phone" placeholder="Téléphone"/>
+								</td>
 								</tr>
 								</table>
 							</h1>
@@ -102,8 +106,6 @@
 						<group col="6" colspan="4">
 							<field name="gender" />
 							<field name="birth_date" />
-							<!-- <field name="id_number" /> -->
-							<field name="roll_number" />
 						</group>
 						<notebook colspan="4">
 							<page string="Address Detail">
@@ -134,7 +136,7 @@
 						</notebook>
                         <separator colspan="4" string="Batch" />
 						<group col="6" colspan="4">
-                            <field name="batch_ids" colspan="4" nolabel="1"  />
+                            <field name="batch_ids" colspan="4" nolabel="1" />
 						</group>
 					</sheet>
 				</form>
