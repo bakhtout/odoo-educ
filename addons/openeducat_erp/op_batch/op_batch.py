@@ -230,7 +230,8 @@ class op_batch_invoiced(osv.osv):
         'invoice_due_date': fields.date(compute='_get_invoice_due_date', string='Date d\'échéance'),
         'invoice_state': fields.char(compute='_get_invoice_state', string='Etat de paiment', size=20),
         'invoice_residual': fields.float(compute='_get_invoice_residual', string='Solde  à payer'),
-        'payment_out_invoice' : fields.float(string='Paiement hors facture')
+        'payment_out_invoice' : fields.float(string='Paiement hors facture'),
+        'payment_date' : fields.date(string='Date du paiement')
 
     }
 
