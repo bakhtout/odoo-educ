@@ -205,7 +205,12 @@ class op_batch_invoiced(osv.osv):
                 else:
                     record.invoice_residual = record.batch_id.fees
             else:
-                record.invoice_residual = record.batch_id.fees - record.payment_out_invoice
+                phases = 1
+                if (record.batch_id.payment_type == 'Q'):
+                    phases = 3
+                if (record.batch_id.payment_type == 'H'):
+                    phases = 2
+                record.invoice_residual = (record.batch_id.fees / phases) - record.payment_out_invoice
 
     @api.depends('invoice_id.state')
     def _get_invoice_state(self):

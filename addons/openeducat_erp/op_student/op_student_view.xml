@@ -94,10 +94,12 @@
 									<td><field name="last_name" placeholder="Nom" style="padding-right:10px"/></td>
 								</tr>
                                 <tr>
-								<td colspan="2">
-									<field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/>
-									<field name="phone" placeholder="Téléphone"/>
-								</td>
+									<td colspan="3">
+										<field name="email" placeholder="Email" style="padding-right:10px" on_change="ValidateEmail(email)"/>
+										<field name="phone" placeholder="Téléphone"/>
+									</td>
+
+
 								</tr>
 								</table>
 							</h1>
