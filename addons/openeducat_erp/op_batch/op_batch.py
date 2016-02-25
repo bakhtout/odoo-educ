@@ -196,7 +196,7 @@ class op_batch_invoiced(osv.osv):
         for record in self:
             record.invoice_due_date = record.invoice_id.date_due
 
-    @api.depends('invoice_id.residual', 'payment_out_invoice')
+    @api.depends('invoice_id.residual', 'payment_out_invoice', 'student_id')
     def _get_invoice_residual(self):
         for record in self:
             if record.invoice_id.id > 0:
@@ -205,12 +205,14 @@ class op_batch_invoiced(osv.osv):
                 else:
                     record.invoice_residual = record.batch_id.fees
             else:
-                phases = 1
-                if (record.batch_id.payment_type == 'Q'):
-                    phases = 3
-                if (record.batch_id.payment_type == 'H'):
-                    phases = 2
-                record.invoice_residual = (record.batch_id.fees / phases) - record.payment_out_invoice
+                already_paid = 0
+                for invoice_batch in record.batch_id.batch_invoiced_ids:
+                    if (invoice_batch.student_id == record.student_id):
+                        already_paid = already_paid + invoice_batch.payment_out_invoice;
+                record.invoice_residual = record.batch_id.fees - already_paid;
+                inv_batch_pool = self.pool.get('op.batch.invoiced')
+                for invoice_batch in record.batch_id.batch_invoiced_ids:
+                    invoice_batch.invoice_residual = record.batch_id.fees - already_paid;
 
     @api.depends('invoice_id.state')
     def _get_invoice_state(self):
