@@ -44,8 +44,6 @@ class op_batch(osv.osv):
         'fees': fields.float(string='Prix TTC', required=True, default=0.0),
         'state': fields.selection([('d', 'En constitution'), ('r', 'En cours'), ('done', 'Terminée'), ('c', 'Annulée')],
                                   select=True, string='State'),
-        'payment_type': fields.selection([('Q', 'en 3 fois'), ('H', 'en 2 fois'), ('Y', 'en 1 fois')],
-                                         string='Mode de paiments', required=True),
         'student_ids': fields.many2many('op.student', 'op_batch_student_rel', 'op_student_id', 'op_batch_id',
                                         string='Students'),
         'batch_invoiced_ids': fields.one2many('op.batch.invoiced', 'batch_id', String='Students', readonly=True),
@@ -59,20 +57,13 @@ class op_batch(osv.osv):
         _logger.info("values are %s", vals)
         for batch in self.browse(cr, uid, ids, context=context):
             student_ids = batch.student_ids
-            phases = 1
-            if (batch.payment_type == 'Q'):
-                phases = 3
-            if (batch.payment_type == 'H'):
-                phases = 2
-        _logger.info("phases value is %s", phases)
         if 'student_ids' in vals:
             student_ids = vals['student_ids'][0][2]
-        for index in range(1, phases + 1):
-            self.create_invoiced_batches(cr, uid, ids, student_ids, index, context=context)
+        self.create_invoiced_batches(cr, uid, ids, student_ids, context=context)
         res = super(op_batch, self).write(cr, uid, ids, vals, context=context)
         return res
 
-    def create_invoiced_batches(self, cr, uid, ids, student_ids, phase, context=None):
+    def create_invoiced_batches(self, cr, uid, ids, student_ids, context=None):
         _logger.info("create payment info for phase %s", phase)
         inv_batch_pool = self.pool.get('op.batch.invoiced')
         if len(student_ids) > 0 and isinstance(student_ids[0], int):
@@ -82,7 +73,7 @@ class op_batch(osv.osv):
             resolved_students = student_ids
 
         if (ids is not None and len(ids) > 0):
-            args = [('batch_id', '=', ids[0]), ('payment_phase', '=', phase)]
+            args = [('batch_id', '=', ids[0])]
             inv_batches = inv_batch_pool.search(cr, uid, args, context=context)
             for inv_batch_id in inv_batches:
                 inv_batch = inv_batch_pool.browse(cr, uid, inv_batch_id, context=context)[0]
@@ -90,13 +81,12 @@ class op_batch(osv.osv):
                     cr.execute("DELETE FROM op_batch_invoiced where id = %s", (inv_batch_id,))
             for student_id in resolved_students:
                 _logger.info(" adding student is %s", student_id['id'])
-                args = [('student_id', '=', student_id['id']), ('batch_id', '=', ids[0]), ('payment_phase', '=', phase)]
+                args = [('student_id', '=', student_id['id']), ('batch_id', '=', ids[0])]
                 inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
                 if (inv_batch is None or len(inv_batch) == 0):
                     inv_batch_data = {
                         'student_id': student_id['id'],
-                        'batch_id': ids[0],
-                        'payment_phase': phase
+                        'batch_id': ids[0]
                     }
                     inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
 
@@ -155,10 +145,10 @@ class op_batch(osv.osv):
         }
         return value
 
-    def retrieve_payments(self, ids, phase):
+    def retrieve_payments(self, ids):
         value = {
-            'domain': str([('batch_id', '=', ids[0]), ('payment_phase', '=', phase)]),
-            'name': 'Etat des paiements ' + str(phase),
+            'domain': str([('batch_id', '=', ids[0])]),
+            'name': 'Etat des paiements',
             'view_type': 'form',
             'view_mode': 'tree,form',
             'res_model': 'op.batch.invoiced',
@@ -168,18 +158,21 @@ class op_batch(osv.osv):
         }
         return value
 
-    def view_payment_1(self, cr, uid, ids, context={}):
-        return self.retrieve_payments(ids, 1)
-
-    def view_payment_2(self, cr, uid, ids, context={}):
-        return self.retrieve_payments(ids, 2)
-
-    def view_payment_3(self, cr, uid, ids, context={}):
-        return self.retrieve_payments(ids, 3)
+    def view_payment(self, cr, uid, ids, context={}):
+        return self.retrieve_payments(ids)
 
 
 op_batch()
 
+class op_batch_payment_balance(osv.osv):
+    _name = 'op.batch.payment.balance'
+    _order = 'invoice_state'
+    _columns = {
+        'batch_id': fields.many2one('op.batch', string='Batch', required=True, ondelete='restrict'),
+        'student_id': fields.many2one('op.student', string='Student', required=True, ondelete='restrict'),
+        'payment_balance': fields.float(string='Solde  à payer'),
+
+    }
 
 class op_batch_invoiced(osv.osv):
     _name = 'op.batch.invoiced'
@@ -196,7 +189,7 @@ class op_batch_invoiced(osv.osv):
         for record in self:
             record.invoice_due_date = record.invoice_id.date_due
 
-    @api.depends('invoice_id.residual', 'payment_out_invoice', 'student_id')
+    @api.depends('invoice_id.residual', 'payment_out_invoice', 'payment_out_invoice_2', 'payment_out_invoice_3', 'student_id')
     def _get_invoice_residual(self):
         for record in self:
             if record.invoice_id.id > 0:
@@ -208,7 +201,7 @@ class op_batch_invoiced(osv.osv):
                 already_paid = 0
                 for invoice_batch in record.batch_id.batch_invoiced_ids:
                     if (invoice_batch.student_id == record.student_id):
-                        already_paid = already_paid + invoice_batch.payment_out_invoice;
+                        already_paid = already_paid + invoice_batch.payment_out_invoice + invoice_batch.payment_out_invoice_2 + invoice_batch.payment_out_invoice_3
                 record.invoice_residual = record.batch_id.fees - already_paid;
                 inv_batch_pool = self.pool.get('op.batch.invoiced')
                 for invoice_batch in record.batch_id.batch_invoiced_ids:
@@ -229,7 +222,6 @@ class op_batch_invoiced(osv.osv):
     _columns = {
         'batch_id': fields.many2one('op.batch', string='Batch', required=True, ondelete='restrict'),
         'student_id': fields.many2one('op.student', string='Student', required=True, ondelete='restrict'),
-        'payment_phase': fields.integer(string="Phase de piaments", default=1),
         'invoice_id': fields.many2one('account.invoice', string='Invoice', required=False),
         'student_full_name': fields.char(compute='_get_student_full_name',
                                          string='Nom complet',
@@ -237,7 +229,9 @@ class op_batch_invoiced(osv.osv):
         'invoice_due_date': fields.date(compute='_get_invoice_due_date', string='Date d\'échéance'),
         'invoice_state': fields.char(compute='_get_invoice_state', string='Etat de paiment', size=20),
         'invoice_residual': fields.float(compute='_get_invoice_residual', string='Solde  à payer'),
-        'payment_out_invoice' : fields.float(string='Paiement hors facture'),
+        'payment_out_invoice' : fields.float(string='Paiement 1ére tranche', default= 0),
+        'payment_out_invoice_2' : fields.float(string='Paiement 2ème tranche', default= 0),
+        'payment_out_invoice_3' : fields.float(string='Paiement 3ème tranche', default= 0),
         'payment_date' : fields.date(string='Date du paiement')
 
     }

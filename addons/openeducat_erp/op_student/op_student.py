@@ -76,16 +76,14 @@ class op_student(osv.osv):
                 _logger.info("batch ids are %s", batch_ids)
                 if len(batch_ids) > 0 and isinstance(batch_ids[0], int):
                     for batch_id in batch_ids:
-                        for index in range(1, 4):
-                            args = [('student_id', '=', ids[0]), ('batch_id', '=', batch_id), ('payment_phase', '=', index)]
-                            inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
-                            if (inv_batch is None or len(inv_batch) == 0):
-                                inv_batch_data = {
-                                    'student_id': ids[0],
-                                    'batch_id': batch_id,
-                                    'payment_phase': index
-                                }
-                                inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
+                        args = [('student_id', '=', ids[0]), ('batch_id', '=', batch_id)]
+                        inv_batch = inv_batch_pool.search(cr, uid, args, context=context)
+                        if (inv_batch is None or len(inv_batch) == 0):
+                            inv_batch_data = {
+                                'student_id': ids[0],
+                                'batch_id': batch_id
+                            }
+                            inv_batch_pool.create(cr, uid, inv_batch_data, context=context)
 
 
         res = super(op_student, self).write(cr, uid, ids, vals, context=context)
