@@ -232,7 +232,9 @@ class op_batch_invoiced(osv.osv):
         'payment_out_invoice' : fields.float(string='Paiement 1ére tranche', default= 0),
         'payment_out_invoice_2' : fields.float(string='Paiement 2ème tranche', default= 0),
         'payment_out_invoice_3' : fields.float(string='Paiement 3ème tranche', default= 0),
-        'payment_date' : fields.date(string='Date du paiement')
+        'payment_date' : fields.date(string='Date du 1er paiement'),
+        'payment_date_2' : fields.date(string='Date du 2ème paiement'),
+        'payment_date_3' : fields.date(string='Date du 3ème paiement')
 
     }
 
