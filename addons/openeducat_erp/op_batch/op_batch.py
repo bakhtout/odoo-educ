@@ -64,7 +64,7 @@ class op_batch(osv.osv):
         return res
 
     def create_invoiced_batches(self, cr, uid, ids, student_ids, context=None):
-        _logger.info("create payment info for phase %s", phase)
+        _logger.info("create payment info")
         inv_batch_pool = self.pool.get('op.batch.invoiced')
         if len(student_ids) > 0 and isinstance(student_ids[0], int):
             resolved_students = self.resolve_2many_commands(cr, uid, 'student_ids', student_ids, ['student_id'],
