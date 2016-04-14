@@ -1,154 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
-		<record id="view_op_batch_tree" model="ir.ui.view">
-			<field name="name">op.batch.tree</field>
-			<field name="model">op.batch</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<tree string="Batch">
-					<field name="code" />
-					<field name="name" />
-					<field name="state" />
-					<field name="start_date" />
-					<field name="end_date" />
-					<field name="course_id" />
-					<button string="Paiements" type="object" name="view_payment"/>
+    <data>
+        <record id="view_op_batch_tree" model="ir.ui.view">
+            <field name="name">op.batch.tree</field>
+            <field name="model">op.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Batch">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="course_id"/>
+                    <button string="Paiements" type="object" name="view_payment"/>
 
 
-				</tree>
-			</field>
-		</record>
-		<record id="view_op_batch_form" model="ir.ui.view">
-			<field name="name">op.batch.form</field>
-			<field name="model">op.batch</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<form string="Batch" version="7.0">
-                    <header>
-						<span
-							groups="openeducat_erp.group_op_back_office_admin,openeducat_erp.group_op_back_office">
-							<button name="create_invoice" string="Créer facture pour le groupe"
-								type="object" icon="gtk-apply" attrs="{'invisible':['|', ('customer_id','=', False), ('invoice_id','>', 0)]}"/>
-						</span>
-					</header>
-					<sheet>
-						<separator colspan="4" string="Batch Details" />
-						<group colspan="4">
-							<field name="code" />
-							<field name="name" />
-							<field name="state" />
-                            <field name="start_date" />
-							<field name="end_date" />
-							<field name="course_id" />
-                            <field string="Client" name="customer_id"
-                                context="{'search_default_customer':1, 'show_address': 1}"
-                                options='{"always_reload": True}'
-                                domain="[('customer', '=', True)]"/>
-                            <field name="invoice_id" />
-                            <field name="fees" />
-						</group>
-                        <separator string="Etudiants" colspan="4" />
-                        <field name="student_ids" colspan="4" nolabel="1">
-							<tree>
-                                <field name="first_name" />
-                                <field name="last_name" />
-                                <field name="birth_date" />
-							</tree>
-						</field>
-                        <separator string="Etat de paiments" colspan="4" attrs="{'invisible':[('customer_id','>', 0)]}"/>
-                            <button string="Paiements" type="object" name="view_payment"/>
-					</sheet>
-				</form>
-			</field>
-		</record>
-		<record id="view_op_batch_invoiced_tree" model="ir.ui.view">
-			<field name="name">op.batch.invoiced.tree</field>
-			<field name="model">op.batch.invoiced</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-                <tree string="Paiments">
-                    <field name="student_full_name" />
-                    <field name="invoice_due_date" />
-                    <field name="invoice_state" />
-                    <field name="invoice_residual" />
-					<field name="payment_out_invoice" />
-					<field name="payment_out_invoice_2" />
-					<field name="payment_out_invoice_3" />
-					<field name="payment_date" />
-                    <button string="Créer facture" type="object" name="create_invoice" attrs="{'invisible':[('invoice_due_date','!=', False)]}"/>
-                    <button string="Voir facture" type="object" name="view_invoice" attrs="{'invisible':[('invoice_due_date','=', False)]}"/>
-				</tree>
+                </tree>
             </field>
-		</record>
-		<record id="view_op_batch_invoiced_search" model="ir.ui.view">
-			<field name="name">op.batch.invoiced.search</field>
-			<field name="model">op.batch.invoiced</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Invoiced">
-					<field name="student_full_name" />
-				</search>
-			</field>
-		</record>
-		<record id="view_op_batch_search" model="ir.ui.view">
-			<field name="name">op.batch.search</field>
-			<field name="model">op.batch</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Batch">
-					<field name="code" />
-					<field name="name" />
-					<field name="start_date" />
-					<field name="end_date" />
-					<field name="course_id" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Start Date" domain="[]"
-							context="{'group_by':'start_date'}" />
-						<filter string="End Date" domain="[]" context="{'group_by':'end_date'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-					</group>
-				</search>
-			</field>
-		</record>
-		<record model="ir.actions.act_window" id="act_open_op_batch_view">
-			<field name="name">Batch</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">op.batch</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_op_batch_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
-		<record model="ir.actions.act_window.view" id="act_open_op_batch_view_form">
-			<field name="act_window_id" ref="act_open_op_batch_view" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_op_batch_form" />
-		</record>
-		<record model="ir.actions.act_window.view" id="act_open_op_batch_view_tree">
-			<field name="act_window_id" ref="act_open_op_batch_view" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_op_batch_tree" />
-		</record>
+        </record>
+        <record id="view_op_batch_form" model="ir.ui.view">
+            <field name="name">op.batch.form</field>
+            <field name="model">op.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Batch" version="7.0">
+                    <header>
+                        <span
+                                groups="openeducat_erp.group_op_back_office_admin,openeducat_erp.group_op_back_office">
+                            <button name="create_invoice" string="Créer facture pour le groupe"
+                                    type="object" icon="gtk-apply"
+                                    attrs="{'invisible':['|', ('customer_id','=', False), ('invoice_id','>', 0)]}"/>
+                        </span>
+                    </header>
+                    <sheet>
+                        <separator colspan="4" string="Batch Details"/>
+                        <group colspan="4">
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="state"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="course_id"/>
+                            <field string="Client" name="customer_id"
+                                   context="{'search_default_customer':1, 'show_address': 1}"
+                                   options='{"always_reload": True}'
+                                   domain="[('customer', '=', True)]"/>
+                            <field name="invoice_id"/>
+                            <field name="fees"/>
+                        </group>
+                        <separator string="Etudiants" colspan="4"/>
+                        <field name="student_ids" colspan="4" nolabel="1">
+                            <tree>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                                <field name="birth_date"/>
+                            </tree>
+                        </field>
+                        <separator string="Etat de paiments" colspan="4"
+                                   attrs="{'invisible':[('customer_id','>', 0)]}"/>
+                        <button string="Paiements" type="object" name="view_payment"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_op_batch_invoiced_form" model="ir.ui.view">
+            <field name="name">op.batch.invoiced.form</field>
+            <field name="model">op.batch.invoiced</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Batch" version="7.0">
+                    <sheet>
+                        <separator colspan="4" string="Details des paiements"/>
+                        <group colspan="4">
+                            <field name="student_full_name"/>
+                            <field name="invoice_due_date"/>
+                            <field name="invoice_state"/>
+                            <field name="invoice_residual"/>
+                            <field name="payment_out_invoice"/>
+                            <field name="payment_out_invoice_2"/>
+                            <field name="payment_out_invoice_3"/>
+                            <field name="payment_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_op_batch_invoiced_tree" model="ir.ui.view">
+            <field name="name">op.batch.invoiced.tree</field>
+            <field name="model">op.batch.invoiced</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Paiments">
+                    <field name="student_full_name"/>
+                    <field name="invoice_due_date"/>
+                    <field name="invoice_state"/>
+                    <field name="invoice_residual"/>
+                    <field name="payment_out_invoice"/>
+                    <field name="payment_out_invoice_2"/>
+                    <field name="payment_out_invoice_3"/>
+                    <field name="payment_date"/>
+                    <button string="Créer facture" type="object" name="create_invoice"
+                            attrs="{'invisible':[('invoice_due_date','!=', False)]}"/>
+                    <button string="Voir facture" type="object" name="view_invoice"
+                            attrs="{'invisible':[('invoice_due_date','=', False)]}"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_op_batch_invoiced_search" model="ir.ui.view">
+            <field name="name">op.batch.invoiced.search</field>
+            <field name="model">op.batch.invoiced</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Invoiced">
+                    <field name="student_full_name"/>
+                </search>
+            </field>
+        </record>
+        <record id="view_op_batch_search" model="ir.ui.view">
+            <field name="name">op.batch.search</field>
+            <field name="model">op.batch</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Batch">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="course_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Start Date" domain="[]"
+                                context="{'group_by':'start_date'}"/>
+                        <filter string="End Date" domain="[]" context="{'group_by':'end_date'}"/>
+                        <filter string="Course" domain="[]" context="{'group_by':'course_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_op_batch_view">
+            <field name="name">Batch</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.batch</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_op_batch_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_op_batch_view_form">
+            <field name="act_window_id" ref="act_open_op_batch_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_op_batch_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_op_batch_view_tree">
+            <field name="act_window_id" ref="act_open_op_batch_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_op_batch_tree"/>
+        </record>
         <record model="ir.actions.act_window" id="act_open_op_batch_invoiced_view">
-			<field name="name">Batch_Invoiced</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">op.batch.invoiced</field>
-			<field name="view_type">tree</field>
-			<field name="view_mode">tree</field>
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
+            <field name="name">Batch_Invoiced</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.batch.invoiced</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_op_batch_invoiced_view_form">
+            <field name="act_window_id" ref="act_open_op_batch_invoiced_view"/>
+            <field name="sequence" eval="40"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_op_batch_invoiced_form"/>
+        </record>
         <record model="ir.actions.act_window.view" id="act_open_op_batch_invoiced_view_tree">
-			<field name="act_window_id" ref="act_open_op_batch_invoiced_view" />
-			<field name="sequence" eval="30" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_op_batch_invoiced_tree" />
-		</record>
+            <field name="act_window_id" ref="act_open_op_batch_invoiced_view"/>
+            <field name="sequence" eval="30"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_op_batch_invoiced_tree"/>
+        </record>
 
-	</data>
+    </data>
 </openerp>
