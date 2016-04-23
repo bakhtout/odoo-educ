@@ -108,6 +108,7 @@
 						<group col="6" colspan="4">
 							<field name="gender" />
 							<field name="birth_date" />
+							<field name="birth_place" />
 						</group>
 						<notebook colspan="4">
 							<page string="Address Detail">
