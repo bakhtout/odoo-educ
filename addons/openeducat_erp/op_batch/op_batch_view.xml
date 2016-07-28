@@ -71,19 +71,33 @@
             <field name="arch" type="xml">
                 <form string="Batch" version="7.0">
                     <sheet>
-                        <separator colspan="4" string="Details des paiements"/>
+                        <separator colspan="4" string="Récapitulatif des paiements"/>
                         <group colspan="4">
                             <field name="student_full_name"/>
                             <field name="invoice_due_date"/>
                             <field name="invoice_state"/>
                             <field name="invoice_residual"/>
+                            <field name="next_payment_amount"/>
+                            <field name="next_payment_date"/>
+                            <field name="student_status"/>
+                        </group>
+                        <separator colspan="4" string="Paiement 1ère tranche"/>
+                        <group colspan="4">
                             <field name="payment_date"/>
                             <field name="payment_out_invoice"/>
+                            <field name="voucher_no"/>
+                        </group>
+                        <separator colspan="4" string="Paiement 2ème tranche"/>
+                        <group colspan="4">
                             <field name="payment_date_2"/>
                             <field name="payment_out_invoice_2"/>
+                            <field name="voucher_no_2"/>
+                        </group>
+                        <separator colspan="4" string="Paiement 3ème tranche"/>
+                        <group colspan="4">
                             <field name="payment_date_3"/>
                             <field name="payment_out_invoice_3"/>
-
+                            <field name="voucher_no_3"/>
                         </group>
                     </sheet>
                 </form>
@@ -99,9 +113,7 @@
                     <field name="invoice_due_date"/>
                     <field name="invoice_state"/>
                     <field name="invoice_residual"/>
-                    <field name="payment_out_invoice"/>
-                    <field name="payment_out_invoice_2"/>
-                    <field name="payment_out_invoice_3"/>
+                    <field name="student_status"/>
                     <button string="Créer facture" type="object" name="create_invoice"
                             attrs="{'invisible':[('invoice_due_date','!=', False)]}"/>
                     <button string="Voir facture" type="object" name="view_invoice"

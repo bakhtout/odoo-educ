@@ -9,10 +9,7 @@
 				<tree string="Attendance Register">
 					<field name="name" />
 					<field name="code" />
-					<field name="course_id" />
 					<field name="batch_id" domain="[('course_id', '=', course_id)]" />
-					<field name="standard_id" domain="[('course_id', '=', course_id)]" />
-					<field name="division_id" />
 				</tree>
 			</field>
 		</record>
@@ -28,10 +25,7 @@
 							<group col="4" colspan="4">
 								<field name="name" />
 								<field name="code" />
-								<field name="course_id" />
-								<field name="batch_id" domain="[('course_id', '=', course_id)]" />
-								<field name="standard_id" domain="[('course_id', '=', course_id)]" />
-								<field name="division_id" />
+								<field name="batch_id" />
 							</group>
 						</div>
 					</sheet>
@@ -46,18 +40,12 @@
 				<search string="Attendance Register">
 					<field name="name" />
 					<field name="code" />
-					<field name="course_id" />
 					<field name="batch_id" />
-					<field name="standard_id" />
-					<field name="division_id" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
 						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
 						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
-						<filter string="Standard" domain="[]"
-							context="{'group_by':'standard_id'}" />
 					</group>
 				</search>
 			</field>

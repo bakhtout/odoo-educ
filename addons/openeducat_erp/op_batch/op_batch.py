@@ -226,6 +226,8 @@ class op_batch_invoiced(osv.osv):
         'student_full_name': fields.char(compute='_get_student_full_name',
                                          string='Nom complet',
                                          size=100),
+        'student_status': fields.selection([('a', 'Actif'), ('s', 'Abandon')],
+                                  select=True, string='Etat inscription', default='a'),
         'invoice_due_date': fields.date(compute='_get_invoice_due_date', string='Date d\'échéance'),
         'invoice_state': fields.char(compute='_get_invoice_state', string='Etat de paiment', size=20),
         'invoice_residual': fields.float(compute='_get_invoice_residual', string='Solde  à payer'),
@@ -234,7 +236,13 @@ class op_batch_invoiced(osv.osv):
         'payment_out_invoice_3' : fields.float(string='Paiement 3ème tranche', default= 0),
         'payment_date' : fields.date(string='Date du 1er paiement'),
         'payment_date_2' : fields.date(string='Date du 2ème paiement'),
-        'payment_date_3' : fields.date(string='Date du 3ème paiement')
+        'payment_date_3' : fields.date(string='Date du 3ème paiement'),
+        'voucher_no': fields.char(string='Numéro Bon 1er paiement', size=20),
+        'voucher_no_2': fields.char(string='Numéro Bon 2ème paiement', size=20),
+        'voucher_no_3': fields.char(string='Numéro Bon 3ème paiement', size=20),
+        'next_payment_amount' : fields.float(string='Montant prochain paiement', default= 0),
+        'next_payment_date': fields.date(string='Date du prochain paiement'),
+
 
     }
 

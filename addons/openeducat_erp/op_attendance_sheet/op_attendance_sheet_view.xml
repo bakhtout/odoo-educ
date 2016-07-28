@@ -22,6 +22,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Attendance Sheet" version="7.0">
+					<header>
+                        <span
+                                groups="openeducat_erp.group_op_back_office_admin,openeducat_erp.group_op_back_office">
+                            <button name="fill_in_sheet" string="Ajouter les étudiants de la session"
+                                    type="object" icon="gtk-apply"/>
+                        </span>
+                    </header>
 					<sheet>
 						<separator string="Attendance Sheet" colspan="4" />
 						<div>
